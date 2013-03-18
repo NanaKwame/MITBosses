@@ -27,5 +27,7 @@
     
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="body1">Example</string>
+    <string name="body2">Example2</string>
 
 </resources>
