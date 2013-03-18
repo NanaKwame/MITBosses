@@ -1,28 +1,34 @@
 package com.example.tabactionbar;
 
+import java.util.ArrayList;
+
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 
-import com.parse.Parse;
+import com.parse.GetCallback;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MainActivity extends Activity {
+	
+	static ArrayList<String> testObjects = new ArrayList<String>();
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		Parse.initialize(this, "AGzf1jUA64JLDe3Kr1etAOuIvTpQAfLZvUUmSl3x", "1bccOOc7hcRKx28QSPqPxXyvFoRywqJPS98H2egq");
 		
-		ParseObject testObject = new ParseObject("TestObject");
-		testObject.put("foo", "bar");
-		testObject.saveInBackground();
+		Intent fromLoginIntent = getIntent();
+		String email = fromLoginIntent.getStringExtra(LogInActivity.USERNAME);
 		
 		ActionBar actionBar = getActionBar();
 
@@ -43,7 +49,38 @@ public class MainActivity extends Activity {
 				meetLabel, MeetFragment.class);
 		tab.setTabListener(tl2);
 		actionBar.addTab(tab);
+		
+		String mapLabel = getResources().getString(R.string.map);
+		tab = actionBar.newTab();
+		tab.setText(mapLabel);
+		TabListener<MapFragment> tl3 = new TabListener<MapFragment>(this,
+				mapLabel, MapFragment.class);
+		tab.setTabListener(tl3);
+		actionBar.addTab(tab);
+		
+		String scheduleLabel = getResources().getString(R.string.schedule);
+		tab = actionBar.newTab();
+		tab.setText(scheduleLabel);
+		TabListener<ScheduleFragment> tl4 = new TabListener<ScheduleFragment>(this,
+				scheduleLabel, ScheduleFragment.class);
+		tab.setTabListener(tl4);
+		actionBar.addTab(tab);
 
+	}
+	
+	public static void removeObject(View v) {
+		ParseQuery query = new ParseQuery("TestObject");
+		query.getInBackground(testObjects.get(0), new GetCallback() {
+		  public void done(ParseObject object, ParseException e) {
+		    if (e == null) {
+		      object.deleteInBackground();
+		    } else {
+		      // something went wrong
+		    	System.out.println("Something went wrong");
+		    }
+		  }
+		});
+		testObjects.remove(0);
 	}
 
 	private class TabListener<T extends Fragment> implements

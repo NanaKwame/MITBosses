@@ -3,6 +3,7 @@ package com.example.tabactionbar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
@@ -54,14 +55,14 @@ public class LogInActivity extends Activity {
 	}
 	
 	public void loginUser(View v) {
-		final Intent mapIntent = new Intent(this, MapActivity.class);
+		final Intent mapIntent = new Intent(this, MainActivity.class);
 		
-		String username = ((EditText) findViewById(R.id.username)).getText().toString();
-		String password = ((EditText) findViewById(R.id.username)).getText().toString();
+		String email = ((EditText) findViewById(R.id.email)).getText().toString();
+		String password = ((EditText) findViewById(R.id.password)).getText().toString();
 		
-		mapIntent.putExtra(USERNAME, username);
+		mapIntent.putExtra(USERNAME, email);
 		
-		ParseUser.logInInBackground(username, password, new LogInCallback() {
+		ParseUser.logInInBackground(email, password, new LogInCallback() {
 			  public void done(ParseUser user, ParseException e) {
 			    if (user != null) {
 			      // Hooray! The user is logged in.
@@ -69,10 +70,9 @@ public class LogInActivity extends Activity {
 			    	
 			    } else {
 			      // Signup failed. Look at the ParseException to see what happened.
-			    	((EditText) findViewById(R.id.username)).setText("");
-			    	((EditText) findViewById(R.id.username)).setText("");
-			    	System.out.println(e);
-			    }
+			    	((EditText) findViewById(R.id.email)).setText("");
+			    	((EditText) findViewById(R.id.password)).setText("");
+			    	Log.e("MYAPP", "exception", e);			    }
 			  }
 			});
 		
