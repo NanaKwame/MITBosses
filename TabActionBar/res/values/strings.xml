@@ -4,11 +4,15 @@
     <string name="app_name">" TabActionBar"</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    
     <string name="meet">Meet</string>
     <string name="todo">Todo</string>
     <string name="todo_body"> Amadu Will implement this activity</string>
     <string name="meet_body">Amadu will begin implementing this activity</string>
-    
+    <string name="remove">Remove Object</string>
+    <string name="title_activity_log_in">LogInActivity</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
 
 </resources>
