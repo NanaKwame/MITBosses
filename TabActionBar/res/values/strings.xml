@@ -5,10 +5,10 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     
-    <string name="label1">one</string>
-    <string name="label2">two</string>
-    <string name="body1"> body one</string>
-    <string name="body2">body two</string>
+    <string name="meet">Meet</string>
+    <string name="todo">Todo</string>
+    <string name="todo_body"> Amadu Will implement this activity</string>
+    <string name="meet_body">Amadu will begin implementing this activity</string>
     
 
 </resources>

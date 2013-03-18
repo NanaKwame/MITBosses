@@ -1,13 +1,16 @@
 package com.example.tabactionbar;
 
-import android.os.Build;
-import android.os.Bundle;
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.os.Build;
+import android.os.Bundle;
+
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MainActivity extends Activity {
@@ -15,23 +18,29 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		Parse.initialize(this, "AGzf1jUA64JLDe3Kr1etAOuIvTpQAfLZvUUmSl3x", "1bccOOc7hcRKx28QSPqPxXyvFoRywqJPS98H2egq");
+		
+		ParseObject testObject = new ParseObject("TestObject");
+		testObject.put("foo", "bar");
+		testObject.saveInBackground();
+		
 		ActionBar actionBar = getActionBar();
 
-actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-		String label1 = getResources().getString(R.string.label1);
+		String todoLabel = getResources().getString(R.string.todo);
 		Tab tab = actionBar.newTab();
-		tab.setText(label1);
-		TabListener<Tab1Fragment> tl = new TabListener<Tab1Fragment>(this,
-				label1, Tab1Fragment.class);
+		tab.setText(todoLabel);
+		TabListener<ToDoFragment> tl = new TabListener<ToDoFragment>(this,
+				todoLabel, ToDoFragment.class);
 		tab.setTabListener(tl);
 		actionBar.addTab(tab);
 
-		String label2 = getResources().getString(R.string.label2);
+		String meetLabel = getResources().getString(R.string.meet);
 		tab = actionBar.newTab();
-		tab.setText(label2);
-		TabListener<Tab2Fragment> tl2 = new TabListener<Tab2Fragment>(this,
-				label2, Tab2Fragment.class);
+		tab.setText(meetLabel);
+		TabListener<MeetFragment> tl2 = new TabListener<MeetFragment>(this,
+				meetLabel, MeetFragment.class);
 		tab.setTabListener(tl2);
 		actionBar.addTab(tab);
 
