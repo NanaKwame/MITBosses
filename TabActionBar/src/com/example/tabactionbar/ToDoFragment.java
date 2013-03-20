@@ -18,17 +18,4 @@ public class ToDoFragment extends Fragment{
 		return (LinearLayout) inflater.inflate(R.layout.todo, container, false);
 	}
 
-//	public void removeObject(View v) {
-//		ParseQuery query = new ParseQuery("TestObject");
-//		query.getInBackground(MainActivity.testObjects.get(0), new GetCallback() {
-//		  public void done(ParseObject object, ParseException e) {
-//		    if (e == null) {
-//		      object.deleteInBackground();
-//		    } else {
-//		      // something went wrong
-//		    	System.out.println("Something went wrong");
-//		    }
-//		  }
-//		});
-//	}
 }

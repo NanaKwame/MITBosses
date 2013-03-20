@@ -1,14 +1,24 @@
 package com.example.tabactionbar;
 
-import android.os.Bundle;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
+
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
-import android.annotation.TargetApi;
-import android.os.Build;
+import android.view.View;
+import android.widget.EditText;
 
 public class SignUpActivity extends Activity {
+
+	public final static String USERNAME = "com.example.myfirstapp.USERNAME";
+	public final static String PASSWORD = "com.example.myfirstapp.PASSWORD";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +26,10 @@ public class SignUpActivity extends Activity {
 		setContentView(R.layout.activity_sign_up);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		
+		Intent fromLogin = getIntent();
+		String email = fromLogin.getStringExtra(LogInActivity.USERNAME);
+		((EditText) findViewById(R.id.email_sign_up)).setText(email);
 	}
 
 	/**
@@ -50,6 +64,48 @@ public class SignUpActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public void signUpUser(View v) {
+		final Intent login = new Intent(this, LogInActivity.class);
+		final EditText email = (EditText) findViewById(R.id.email_sign_up);
+		final EditText password = (EditText) findViewById(R.id.password_sign_up);
+		final EditText confirm_password = (EditText) findViewById(R.id.confirm_password_sign_up);
+		
+		String email_text = email.getText().toString();
+		String confirm_text = confirm_password.getText().toString();
+		String password_text = password.getText().toString();
+		
+		login.putExtra(USERNAME, email_text);
+		login.putExtra(PASSWORD, password_text);
+		
+		if (confirm_text.equals(password_text)) {
+			//if the password are correct then redirect to the login page
+			ParseUser newUser = new ParseUser();
+			newUser.setUsername(email_text);
+			newUser.setPassword(password_text);
+			newUser.setEmail(email_text);
+			
+			newUser.signUpInBackground(new SignUpCallback() {
+				  public void done(ParseException e) {
+				    if (e == null) {
+				    	startActivity(login);
+				    } else {
+				      // Sign up didn't succeed. Look at the ParseException
+				      // to figure out what went wrong
+				    	email.setText("");
+				    	password.setText("");
+				    	confirm_password.setText("");
+				    }
+				  }
+				});
+		}else {
+			//some information as to why the user was unable to sign in 
+			//with this user login should be mentioned
+			email.setText("");
+	    	password.setText("");
+	    	confirm_password.setText("");
+		}
 	}
 
 }

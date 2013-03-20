@@ -27,9 +27,9 @@ public class LogInActivity extends Activity {
 		Parse.initialize(this, "AGzf1jUA64JLDe3Kr1etAOuIvTpQAfLZvUUmSl3x", "1bccOOc7hcRKx28QSPqPxXyvFoRywqJPS98H2egq");
 		
 		ParseUser testUser = new ParseUser();
-		testUser.setUsername("Amadu Durham");
+		testUser.setUsername("parse@gmail.com");
 		testUser.setPassword("testing");
-		testUser.setEmail("parse@gmai.com");
+//		testUser.setEmail("parse@gmai.com");
 		
 		testUser.signUpInBackground(new SignUpCallback() {
 			  public void done(ParseException e) {
@@ -52,7 +52,9 @@ public class LogInActivity extends Activity {
 	}
 	
 	public void signUp(View v) {
-		
+		Intent signUp = new Intent(this, SignUpActivity.class);
+		signUp.putExtra(USERNAME, ((EditText) findViewById(R.id.email)).getText().toString());
+		startActivity(signUp);
 	}
 	
 	public void loginUser(View v) {
