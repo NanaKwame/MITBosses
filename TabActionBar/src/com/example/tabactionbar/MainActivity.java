@@ -1,17 +1,23 @@
 package com.example.tabactionbar;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -22,6 +28,9 @@ import com.parse.ParseQuery;
 public class MainActivity extends Activity {
 	
 	static ArrayList<String> testObjects = new ArrayList<String>();
+	private final String todo = "Tasks";
+	private Dialog dialog;
+	private static String currentUser;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -29,6 +38,7 @@ public class MainActivity extends Activity {
 		
 		Intent fromLoginIntent = getIntent();
 		String email = fromLoginIntent.getStringExtra(LogInActivity.USERNAME);
+		setCurrentUser(email);
 		
 		ActionBar actionBar = getActionBar();
 
@@ -130,6 +140,67 @@ public class MainActivity extends Activity {
 		public void onTabReselected(Tab tab, FragmentTransaction ft) {
 			// User selected the already selected tab. Usually do nothing.
 		}
+	}
+
+	/**
+	 * Popups the dialog in order to create a new task
+	 * @param v
+	 */
+	public void createTask(View v) {
+		Log.e("MainActivity", "The createTask method was called in this class");
+		Dialog dialog = getTaskDialog();
+		dialog.show();
+	}
+	
+	private Dialog getTaskDialog() {
+		dialog = new Dialog(this);
+		dialog.setContentView(R.layout.create_task_dialog);
+		dialog.setTitle(R.string.createTask);
+		
+		// Add button functionality to create
+		Button newTaskButton = (Button) dialog.findViewById(R.id.submit_new_task);
+		newTaskButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				submitNewTask(v);
+			}
+			
+		});
+		return dialog;
+	}
+	
+	/**
+	 * Persists the task in the Database and calls the ListFragment
+	 * in order to update the list of activities
+	 * @param v
+	 */
+	private void submitNewTask(View v) {
+		Log.e("MainActivity", "The submitNewTask method was called in this class");
+
+		HashMap<String, String> map = new HashMap<String,String>();
+		
+		// get the name from the editText of the popup window
+		EditText taskName = (EditText) dialog.findViewById(R.id.edit_task_name_text);
+		String name = taskName.getText().toString();
+		taskName.setText("");
+		dialog.dismiss();
+		Log.e("MainActivity", "The value of taskName:" + name);
+
+		
+		// Map only a title/name of task
+		map.put("name", name);
+		map.put("creator", currentUser);
+		ToDoFragment.updateListFragment(todo, map);
+	}
+	
+	private static void setCurrentUser(String name) {
+		currentUser = name;
+	}
+	
+	public static String getCurrentUser() {
+		return currentUser;
 	}
 
 }

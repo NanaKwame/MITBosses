@@ -10,8 +10,11 @@
     
     <string name="todo">Todo</string>
     <string name="todo_body"> Amadu Will implement this activity</string>
-    <string name="createTask">Create</string>
+    <string name="createTaskButton">Create</string>
+    <string name="createTask">Create Task</string>
     <string name="editTaskPreferences">Edit Preferences</string>
+    <string name="task_name">Name:</string>
+    <string name="task_name_hint">New Task Name</string>
     
     <string name="schedule">Schedule</string>
     <string name="schedule_body">Sheldon will handle this aspect</string>
