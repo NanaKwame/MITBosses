@@ -13,7 +13,6 @@ import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
-import com.parse.SignUpCallback;
 
 public class LogInActivity extends Activity {
 
@@ -25,22 +24,6 @@ public class LogInActivity extends Activity {
 		setContentView(R.layout.activity_log_in);
 		
 		Parse.initialize(this, "AGzf1jUA64JLDe3Kr1etAOuIvTpQAfLZvUUmSl3x", "1bccOOc7hcRKx28QSPqPxXyvFoRywqJPS98H2egq");
-		
-		ParseUser testUser = new ParseUser();
-		testUser.setUsername("parse@gmail.com");
-		testUser.setPassword("testing");
-//		testUser.setEmail("parse@gmai.com");
-		
-		testUser.signUpInBackground(new SignUpCallback() {
-			  public void done(ParseException e) {
-			    if (e == null) {
-			      // Hooray! Let them use the app now.
-			    } else {
-			      // Sign up didn't succeed. Look at the ParseException
-			      // to figure out what went wrong
-			    }
-			  }
-			});
 		
 	}
 
@@ -69,6 +52,8 @@ public class LogInActivity extends Activity {
 			  public void done(ParseUser user, ParseException e) {
 			    if (user != null) {
 			      // Hooray! The user is logged in.
+			    	((EditText) findViewById(R.id.email)).setText("");
+			    	((EditText) findViewById(R.id.password)).setText("");
 			    	startActivity(mapIntent);
 			    	
 			    } else {
