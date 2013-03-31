@@ -15,22 +15,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class InitListTodoFragment extends ListFragment {
 
-	Button mButton;
+//	Button mButton;
 	private static ArrayAdapter<String> adapter;
 	private static ArrayList<String> taskList;
 	private static final String className = "Tasks";
@@ -44,16 +43,16 @@ public class InitListTodoFragment extends ListFragment {
 			Bundle savedInstanceState) {
 
 		View view = inflater.inflate(R.layout.list_of_tasks, null);
-		mButton = (Button) view.findViewById(R.id.createTask);
-		mButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				Log.e("InitListFragment", "The createTask method was called in this class");
-//				createTask();
-			}
-		});
-		return inflater.inflate(R.layout.list_of_tasks, null);
+//		mButton = (Button) view.findViewById(R.id.createTask);
+//		mButton.setOnClickListener(new OnClickListener() {
+//
+//			@Override
+//			public void onClick(View arg0) {
+//				Log.e("InitListFragment", "The createTask method was called in this class");
+////				createTask();
+//			}
+//		});
+		return view;
 	}
 	
 	@Override
@@ -151,10 +150,14 @@ public class InitListTodoFragment extends ListFragment {
 	    .show();
 	}
 
+	/**
+	 * refreshes the tasklist that is used by the adapter to show all
+	 * of the task items
+	 */
 	private static void setTaskList() {
 		taskList.removeAll(taskList);
 		ParseQuery query = new ParseQuery(className);
-		query.whereEqualTo("creator", MainActivity.getCurrentUser());
+		query.whereEqualTo("creator", ParseUser.getCurrentUser().getUsername());
 		query.findInBackground(new FindCallback() {
 
 			@Override

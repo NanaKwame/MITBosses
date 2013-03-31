@@ -2,27 +2,35 @@ package com.example.tabactionbar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
+import org.json.JSONArray;
 
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.parse.GetCallback;
+import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.PushService;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MainActivity extends Activity {
@@ -30,15 +38,15 @@ public class MainActivity extends Activity {
 	static ArrayList<String> testObjects = new ArrayList<String>();
 	private final String todo = "Tasks";
 	private Dialog dialog;
-	private static String currentUser;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+				
+//		Intent fromLoginIntent = getIntent();
+//		String email = fromLoginIntent.getStringExtra(LogInActivity.USERNAME);
 		
-		Intent fromLoginIntent = getIntent();
-		String email = fromLoginIntent.getStringExtra(LogInActivity.USERNAME);
-		setCurrentUser(email);
+		setupPushNotifications();
 		
 		ActionBar actionBar = getActionBar();
 
@@ -78,19 +86,24 @@ public class MainActivity extends Activity {
 
 	}
 	
-	public static void removeObject(View v) {
-		ParseQuery query = new ParseQuery("TestObject");
-		query.getInBackground(testObjects.get(0), new GetCallback() {
-		  public void done(ParseObject object, ParseException e) {
-		    if (e == null) {
-		      object.deleteInBackground();
-		    } else {
-		      // something went wrong
-		    	System.out.println("Something went wrong");
-		    }
-		  }
-		});
-		testObjects.remove(0);
+//	public static void removeObject(View v) {
+//		ParseQuery query = new ParseQuery("TestObject");
+//		query.getInBackground(testObjects.get(0), new GetCallback() {
+//		  public void done(ParseObject object, ParseException e) {
+//		    if (e == null) {
+//		      object.deleteInBackground();
+//		    } else {
+//		      // something went wrong
+//		    	System.out.println("Something went wrong");
+//		    }
+//		  }
+//		});
+//		testObjects.remove(0);
+//	}
+
+	private void setupPushNotifications() {
+		PushService.subscribe(this, "", MainActivity.class);
+		PushService.setDefaultPushCallback(this, MainActivity.class);
 	}
 
 	private class TabListener<T extends Fragment> implements
@@ -152,6 +165,10 @@ public class MainActivity extends Activity {
 		dialog.show();
 	}
 	
+	/**
+	 * Create Task Dialog Window
+	 * @return
+	 */
 	private Dialog getTaskDialog() {
 		dialog = new Dialog(this);
 		dialog.setContentView(R.layout.create_task_dialog);
@@ -191,16 +208,215 @@ public class MainActivity extends Activity {
 		
 		// Map only a title/name of task
 		map.put("name", name);
-		map.put("creator", currentUser);
+		map.put("creator", ParseUser.getCurrentUser().getUsername());
 		ToDoFragment.updateListFragment(todo, map);
 	}
 	
-	private static void setCurrentUser(String name) {
-		currentUser = name;
+	/**
+	 * Called through the Meet fragment, and pops up a dialog window
+	 * in order to select a course to add
+	 * @param v
+	 */
+	public void showCourseAdder(View v) {
+		final View view = v;
+		dialog = new Dialog(this);
+		dialog.setContentView(R.layout.add_course_dialog);
+		dialog.setTitle(R.string.addCourse);
+		Button mButton = (Button) dialog.findViewById(R.id.add_course_button);
+		mButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Log.e("Main", "addCourse");
+				addCourseToUser(view);
+			}
+		});
+		
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, MeetFragment.COURSES);        
+		AutoCompleteTextView coursePick = (AutoCompleteTextView) dialog.findViewById(R.id.auto_complete_course);
+		coursePick.setThreshold(1);
+		coursePick.setAdapter(adapter);
+		dialog.show();
+
 	}
 	
-	public static String getCurrentUser() {
-		return currentUser;
+	/**
+	 * Adds the course to the User's course list and makes a new course
+	 * with
+	 * @param v
+	 */
+	public void addCourseToUser(View v) {
+		ParseUser currentUser = ParseUser.getCurrentUser();
+		JSONArray courses = new JSONArray();
+		for (Object course : currentUser.getList("courses")) {
+			courses.put(course);
+		}
+		Log.e("Main", "Course List: "+ courses.toString());
+		String courseNum = ((AutoCompleteTextView) dialog.findViewById(R.id.auto_complete_course)).getText().toString();
+    	currentUser.put("courses", courses.put(courseNum));
+		Log.e("Main", "Course List: "+ courses.toString());
+    	currentUser.saveInBackground();
+    	addUserToCourse(courseNum);
+	}
+	
+	/**
+	 * Adds the User to the course list of Users
+	 */
+	private void addUserToCourse(final String courseNum) {
+		ParseQuery query = new ParseQuery(MeetFragment.COURSE_FIELD);
+		query.whereEqualTo("number", courseNum);
+		query.findInBackground(new FindCallback() {
+		    public void done(List<ParseObject> courseList, ParseException e) {
+		        if (e == null && !courseList.isEmpty()) {
+		            //update the User object
+		        	ParseObject object = courseList.get(0);
+		        	JSONArray users = new JSONArray();
+		        	for (Object user : object.getList("users")) {
+		        		users.put(user);
+		        	}
+//		        	Log.e("adding course", users.toString());
+		        	object.put("users", users.put(ParseUser.getCurrentUser().getUsername()));
+		        	object.saveInBackground();
+		        } else if (e == null && courseList.isEmpty()){
+		        	Log.e("adding course", "made it");
+
+		        	if (MeetFragment.COURSES.contains(courseNum)) {
+		        		//create new course in DB
+		        		ParseObject object = new ParseObject(MeetFragment.COURSE_FIELD);
+		        		object.put("number", courseNum);
+		        		object.put("users", new JSONArray().put(ParseUser.getCurrentUser().getUsername()));
+		        		object.put("groups", new JSONArray());
+		        		object.saveInBackground();
+//			        	Log.e("adding course", object.getList("users").toString());
+
+		        	}
+		        } else {
+		        	Log.d("course", "Error: " + e.getMessage());
+		        }
+		        MeetCourseFragment.updateCourseGridView();
+	        	dialog.dismiss();
+		    }
+		});
+	}
+	
+	/**
+	 * Display a dialog box for creating a group
+	 * @param v
+	 */
+	public void showCourseGroupDialog(View v) {
+		dialog = new Dialog(this);
+		dialog.setContentView(R.layout.add_group_dialog);
+		dialog.setTitle(R.string.addGroup);
+		Button mButton = (Button) dialog.findViewById(R.id.create_group_dialog_button);
+		mButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Log.e("Main", "addGroup");
+				addGroupToCourse();
+			}
+		});
+		dialog.show();
+	}
+	
+	private void addGroupToCourse() {
+		final EditText gNameField = (EditText) dialog.findViewById(R.id.group_name);
+		final MeetGroupFragment frag = MeetFragment.getCurrentGroupFrag();
+		
+		if (!frag.getGroupList().contains(gNameField.getText().toString())) {
+			// add the group to the course group list
+			Log.e("Main", "Inside the addGroupToCourse");
+			ParseQuery query = new ParseQuery(MeetFragment.COURSE_FIELD);
+			query.whereEqualTo("number", frag.getCourseNum());
+			query.findInBackground(new FindCallback() {
+
+				@Override
+				public void done(List<ParseObject> tList, ParseException e) {
+					if (e == null) {
+						if (!tList.isEmpty()) {
+							JSONArray groupList = new JSONArray();
+							ParseObject course = tList.get(0);
+							for (Object obj:course.getList("groups")) {
+								groupList.put((String) obj);
+							}
+							groupList.put(gNameField.getText().toString());
+							course.put("groups", groupList);
+							course.saveInBackground();
+							frag.updateGroupList();
+							dialog.dismiss();
+						}
+					}
+					else {
+						// do something if the query is not successful
+					}
+				}
+				
+			});
+		}
+		else {
+			// present an alert dialog stating the inability to create an identical group
+			dialog.dismiss();
+			new AlertDialog.Builder(this)
+		    .setTitle("Duplicate Group")
+		    .setMessage("Can Not Create Duplicate Group Name")
+		    .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+		        public void onClick(DialogInterface dialog, int which) { 
+		            // simply close the alert dialog
+		        	dialog.dismiss();
+		        }
+		     })
+		    .show();
+		}
+	}
+	
+	public void deleteCourse(View v) {
+		deleteCourseFromUser();
+		deleteUserFromCourse();
+	}
+
+	private void deleteUserFromCourse() {
+		final MeetGroupFragment frag = MeetFragment.getCurrentGroupFrag();
+		
+		ParseQuery query = new ParseQuery(MeetFragment.COURSE_FIELD);
+		query.whereEqualTo("number", frag.getCourseNum());
+		query.findInBackground(new FindCallback() {
+		    public void done(List<ParseObject> courseList, ParseException e) {
+		        if (e == null && !courseList.isEmpty()) {
+		            //delete the User object
+		        	ParseObject obj = courseList.get(0);
+		        	ParseUser user = ParseUser.getCurrentUser();
+		        	JSONArray arr = new JSONArray();
+		        	for (Object object:obj.getList("users")) {
+		        		if (!object.equals(user.getUsername())) {
+		        			arr.put(object);
+		        		}
+		        	}
+		        	obj.put("users", arr);
+		        	
+		        	arr = new JSONArray();
+		        	for (Object object:user.getList("courses")) {
+		        		if (!object.equals(obj.getString("number"))) {
+		        			arr.put(object);
+		        		}
+		        	}
+		        	user.put("courses", arr);
+		        	
+		        	user.saveInBackground();
+		        	obj.saveInBackground();
+		        	MeetFragment.revertHome();
+		        }
+		        else {
+		        	// there was an error that should be handled
+		        }
+		    }
+		});
+		        	
+		
+	}
+
+	private void deleteCourseFromUser() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
