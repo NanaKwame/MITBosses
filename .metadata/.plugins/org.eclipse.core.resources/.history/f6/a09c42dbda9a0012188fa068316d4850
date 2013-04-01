@@ -40,8 +40,8 @@ public class MainActivity extends Activity {
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				if(isChecked==true){
 					locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 
-					(long)10*1000,
-					(float)10,
+					(long)60*1000,
+					(float)100,
 					locationListener); 
 				}
 			}
@@ -53,8 +53,8 @@ public class MainActivity extends Activity {
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				if(isChecked==true){
 					locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 
-					(long)10*1000,
-					(float)10,
+					(long)60*1000,
+					(float)100,
 					locationListener); 
 				}
 			}
@@ -66,12 +66,12 @@ public class MainActivity extends Activity {
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				if(isChecked==true){
 					locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 
-					(long)10*1000,
-					(float)10,
+					(long)60*1000,
+					(float)100,
 					locationListener); 
 					locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 
-							(long)10*1000,
-							(float)10,
+							(long)60*1000,
+							(float)100,
 							locationListener); 
 				}
 				
