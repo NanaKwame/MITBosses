@@ -43,6 +43,8 @@ public class MainActivity extends Activity {
 					(long)10*1000,
 					(float)10,
 					locationListener); 
+				}else {
+					locationManager.removeUpdates(LocationManager.GPS_PROVDER);
 				}
 			}
 		});
@@ -56,27 +58,31 @@ public class MainActivity extends Activity {
 					(long)10*1000,
 					(float)10,
 					locationListener); 
+				} else {
+					locationManager.removeUpdates(LocationManager.NETWORK_PROVIDER);
 				}
 			}
 		});
-        both = (CheckBox) findViewById(R.id.GPSWIFI);
-        both.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				if(isChecked==true){
-					locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 
-					(long)10*1000,
-					(float)10,
-					locationListener); 
-					locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 
-							(long)10*1000,
-							(float)10,
-							locationListener); 
-				}
-				
-			}
-		});
+//        both = (CheckBox) findViewById(R.id.GPSWIFI);
+//        both.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+//			
+//			@Override
+//			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//				if(isChecked==true){
+//					locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 
+//					(long)10*1000,
+//					(float)10,
+//					locationListener); 
+//					locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 
+//							(long)10*1000,
+//							(float)10,
+//							locationListener); 
+//				} else {
+//					locationManager.removeUpdates(LocationManager.NETWORK_PROVIDER);
+//				}
+//				
+//			}
+//		});
         
     }
 
