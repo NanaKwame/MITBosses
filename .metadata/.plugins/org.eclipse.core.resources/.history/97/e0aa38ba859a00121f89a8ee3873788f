@@ -33,7 +33,7 @@ public class NetworkActivity extends Activity {
 			    request.allowScanningByMediaScanner();
 			    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 			}
-			request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "networkTest.pdf");
+			request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "networkTest.ext");
 
 			// get download service and enqueue file
 			DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);

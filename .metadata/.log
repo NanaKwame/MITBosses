@@ -271,3 +271,25 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/NetworkApplica
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2013-03-31 23:42:17.740
 !MESSAGE Resource '/NetworkApplication/res' does not exist.
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-04-01 00:32:47.284
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-04-01 00:32:47.314
+!MESSAGE Conflict for 'org.eclipse.ui.edit.undo':
+HandlerActivation(commandId=org.eclipse.ui.edit.undo,
+	handler=ActionHandler(org.eclipse.egit.ui.internal.dialogs.SpellcheckableMessageArea$TextViewerAction@45c08dd5),
+	expression=ActiveShellExpression(Shell {Git Repository Exploring - LocationApplication/src/com/example/locationapplication/LocationActivity.java - Eclipse SDK}),sourcePriority=17408)
+HandlerActivation(commandId=org.eclipse.ui.edit.undo,
+	handler=ActionHandler(RetargetAction(undo)),
+	expression=ActiveShellExpression(Shell {Git Repository Exploring - LocationApplication/src/com/example/locationapplication/LocationActivity.java - Eclipse SDK}),sourcePriority=17408)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-04-01 00:32:47.319
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-04-01 00:32:47.319
+!MESSAGE Conflict for 'org.eclipse.ui.edit.redo':
+HandlerActivation(commandId=org.eclipse.ui.edit.redo,
+	handler=ActionHandler(RetargetAction(redo)),
+	expression=ActiveShellExpression(Shell {Git Repository Exploring - LocationApplication/src/com/example/locationapplication/LocationActivity.java - Eclipse SDK}),sourcePriority=17408)
+HandlerActivation(commandId=org.eclipse.ui.edit.redo,
+	handler=ActionHandler(org.eclipse.egit.ui.internal.dialogs.SpellcheckableMessageArea$TextViewerAction@21d42a20),
+	expression=ActiveShellExpression(Shell {Git Repository Exploring - LocationApplication/src/com/example/locationapplication/LocationActivity.java - Eclipse SDK}),sourcePriority=17408)
