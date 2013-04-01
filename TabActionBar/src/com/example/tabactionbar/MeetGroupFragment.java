@@ -43,25 +43,24 @@ public class MeetGroupFragment extends ListFragment{
 		        android.R.layout.simple_list_item_1, groupList);
 	  adapter.setNotifyOnChange(true);
 	  setListAdapter(adapter);
-	  setTaskList();
+	  setGroupList();
 	}
 
 	/**
 	 * refreshes the grouplist that is used by the adapter to show all
 	 * of the groups
 	 */
-	private void setTaskList() {
-		ParseQuery query = new ParseQuery(MeetFragment.COURSE_FIELD);
-		query.whereEqualTo("number", cNum);
+	private void setGroupList() {
+		ParseQuery query = new ParseQuery(MeetFragment.GROUP_FIELD);
+		query.whereEqualTo("coursenum", cNum);
 		query.findInBackground(new FindCallback() {
 
 			@Override
 			public void done(List<ParseObject> tList, ParseException e) {
 				if (e == null) {
 					if (!tList.isEmpty()) {
-						ParseObject course = tList.get(0);
-						for (Object obj:course.getList("groups")) {
-							groupList.add((String) obj);
+						for (ParseObject obj:tList) {
+							groupList.add(obj.getString("name"));
 						}
 					}
 					adapter.notifyDataSetChanged();
@@ -80,7 +79,7 @@ public class MeetGroupFragment extends ListFragment{
 	 */
 	public void updateGroupList() {
 		groupList.removeAll(groupList);
-		setTaskList();
+		setGroupList();
 	}
 	
 	/**

@@ -21,6 +21,7 @@ public class MeetFragment extends Fragment{
 	private static Fragment currentFrag;
 //	private Button addButton;
 	static final String COURSE_FIELD = "Courses";
+	static final String GROUP_FIELD = "Groups";
 	static final ArrayList<String> COURSES = new ArrayList<String>(Arrays.asList(
 											  "8.01","8.02","8.03","8.04","18.01",
 											  "18.02","18.03","9.00","9.01","9.65",
@@ -76,4 +77,5 @@ public class MeetFragment extends Fragment{
 		transaction.replace(R.id.meetContentFragment, currentFrag);
 		transaction.commit();
 	}
+
 }

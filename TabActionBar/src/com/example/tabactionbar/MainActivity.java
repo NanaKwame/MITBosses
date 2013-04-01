@@ -342,7 +342,7 @@ public class MainActivity extends Activity {
 							groupList.put(gNameField.getText().toString());
 							course.put("groups", groupList);
 							course.saveInBackground();
-							frag.updateGroupList();
+							addGroup(gNameField.getText().toString());
 							dialog.dismiss();
 						}
 					}
@@ -369,6 +369,15 @@ public class MainActivity extends Activity {
 		}
 	}
 	
+	private void addGroup(String gName) {
+		final MeetGroupFragment frag = MeetFragment.getCurrentGroupFrag();
+		ParseObject group = new ParseObject(MeetFragment.GROUP_FIELD);
+		group.put("name", gName);
+		group.put("coursenum", frag.getCourseNum());
+		group.saveInBackground();
+		frag.updateGroupList();
+	}
+
 	public void deleteCourse(View v) {
 		deleteCourseFromUser();
 		deleteUserFromCourse();
