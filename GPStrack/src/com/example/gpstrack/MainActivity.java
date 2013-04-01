@@ -1,16 +1,19 @@
 package com.example.gpstrack;
 
+import android.app.Activity;
+import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.app.Activity;
-import android.content.Context;
 import android.view.Menu;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
+
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 public class MainActivity extends Activity {
 	CheckBox gps;
@@ -21,12 +24,18 @@ public class MainActivity extends Activity {
 	TextView accuView;
 	LocationManager locationManager; 
 	MyListener locationListener;
+	static boolean gpsOn;
+	static boolean wifiOn;
+	static boolean bothOn;
 	
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        Parse.initialize(this, "AGzf1jUA64JLDe3Kr1etAOuIvTpQAfLZvUUmSl3x", "1bccOOc7hcRKx28QSPqPxXyvFoRywqJPS98H2egq");
+        
         locationManager= (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         latView = (TextView) findViewById(R.id.latText);
         longView = (TextView) findViewById(R.id.longText);
@@ -43,10 +52,14 @@ public class MainActivity extends Activity {
 					locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 
 					(long)10*1000,
 					(float)10,
-					locationListener); 
+					locationListener);
+					gpsOn = true;
+				}else {
+					gpsOn = false;
 				}
 			}
 		});
+        
         wifi = (CheckBox) findViewById(R.id.WIFIbox);
         wifi.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			
@@ -57,10 +70,14 @@ public class MainActivity extends Activity {
 					locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 
 					(long)10*1000,
 					(float)10,
-					locationListener); 
+					locationListener);
+					wifiOn = true;
+				}else {
+					wifiOn = false;
 				}
 			}
 		});
+        
         both = (CheckBox) findViewById(R.id.GPSWIFI);
         both.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			
@@ -76,6 +93,9 @@ public class MainActivity extends Activity {
 							(long)10*1000,
 							(float)10,
 							locationListener); 
+					bothOn = true;
+				}else {
+					bothOn = false;
 				}
 				
 			}
@@ -112,7 +132,25 @@ class MyListener implements LocationListener{
 	    lat.setText(Double.toString(latitude));
 	    accu.setText(Double.toString(accuracy));
 	    
-	    
+	    if (MainActivity.gpsOn && !MainActivity.wifiOn && !MainActivity.bothOn) {
+	    	ParseObject locations = new ParseObject("LocationGPS");
+	    	locations.put("Longitude", longi);
+	    	locations.put("Latitude", lat);
+	    	locations.put("Accuracy", accu);
+	    	locations.saveInBackground();
+	    }else if (MainActivity.wifiOn && !MainActivity.gpsOn && !MainActivity.bothOn) {
+	    	ParseObject locations = new ParseObject("LocationNewtork");
+	    	locations.put("Longitude", longi);
+	    	locations.put("Latitude", lat);
+	    	locations.put("Accuracy", accu);
+	    	locations.saveInBackground();
+	    }else if (MainActivity.bothOn && !MainActivity.gpsOn && !MainActivity.wifiOn) {
+	    	ParseObject locations = new ParseObject("LocationGPS_Network");
+	    	locations.put("Longitude", longi);
+	    	locations.put("Latitude", lat);
+	    	locations.put("Accuracy", accu);
+	    	locations.saveInBackground();
+	    }
 		
 	}
 
