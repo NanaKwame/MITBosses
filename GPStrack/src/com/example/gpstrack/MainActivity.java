@@ -56,6 +56,9 @@ public class MainActivity extends Activity {
 					gpsOn = true;
 				}else {
 					gpsOn = false;
+					latView.setText("0.0");
+					longView.setText("0.0");
+					accuView.setText("0.0");
 				}
 			}
 		});
@@ -74,6 +77,9 @@ public class MainActivity extends Activity {
 					wifiOn = true;
 				}else {
 					wifiOn = false;
+					latView.setText("0.0");
+					longView.setText("0.0");
+					accuView.setText("0.0");
 				}
 			}
 		});
@@ -96,6 +102,9 @@ public class MainActivity extends Activity {
 					bothOn = true;
 				}else {
 					bothOn = false;
+					latView.setText("0.0");
+					longView.setText("0.0");
+					accuView.setText("0.0");
 				}
 				
 			}
@@ -134,21 +143,23 @@ class MyListener implements LocationListener{
 	    
 	    if (MainActivity.gpsOn && !MainActivity.wifiOn && !MainActivity.bothOn) {
 	    	ParseObject locations = new ParseObject("LocationGPS");
-	    	locations.put("Longitude", longi);
-	    	locations.put("Latitude", lat);
-	    	locations.put("Accuracy", accu);
+	    	locations.put("Longitude", longitude);
+	    	locations.put("Latitude", latitude);
+	    	locations.put("Accuracy", accuracy);
 	    	locations.saveInBackground();
-	    }else if (MainActivity.wifiOn && !MainActivity.gpsOn && !MainActivity.bothOn) {
+	    }
+	    else if (MainActivity.wifiOn && !MainActivity.gpsOn && !MainActivity.bothOn) {
 	    	ParseObject locations = new ParseObject("LocationNewtork");
-	    	locations.put("Longitude", longi);
-	    	locations.put("Latitude", lat);
-	    	locations.put("Accuracy", accu);
+	    	locations.put("Longitude", longitude);
+	    	locations.put("Latitude", latitude);
+	    	locations.put("Accuracy", accuracy);
 	    	locations.saveInBackground();
-	    }else if (MainActivity.bothOn && !MainActivity.gpsOn && !MainActivity.wifiOn) {
+	    }
+	    else if (MainActivity.bothOn && !MainActivity.gpsOn && !MainActivity.wifiOn) {
 	    	ParseObject locations = new ParseObject("LocationGPS_Network");
-	    	locations.put("Longitude", longi);
-	    	locations.put("Latitude", lat);
-	    	locations.put("Accuracy", accu);
+	    	locations.put("Longitude", longitude);
+	    	locations.put("Latitude", latitude);
+	    	locations.put("Accuracy", accuracy);
 	    	locations.saveInBackground();
 	    }
 		
