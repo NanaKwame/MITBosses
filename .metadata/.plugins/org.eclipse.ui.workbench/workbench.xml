@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="15" version="2.0">
+<workbench progressCount="20" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="1024" x="125" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -22,8 +22,8 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -32,33 +32,31 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LocationActivity.java" partName="LocationActivity.java" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/LocationApplication/src/com/example/locationapplication/LocationActivity.java" title="LocationActivity.java" tooltip="LocationApplication/src/com/example/locationapplication/LocationActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LocationApplication/src/com/example/locationapplication/LocationActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="880" selectionTopPixel="109"/>
-</editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_location.xml" partName="activity_location.xml" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/LocationApplication/res/layout/activity_location.xml" title="activity_location.xml" tooltip="LocationApplication/res/layout/activity_location.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LocationApplication/res/layout/activity_location.xml"/>
-</editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" partName="strings.xml" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/LocationApplication/res/values/strings.xml" title="strings.xml" tooltip="LocationApplication/res/values/strings.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LocationApplication/res/values/strings.xml"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NetworkActivity.java" partName="NetworkActivity.java" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/NetworkApplication/src/com/example/networkapplication/NetworkActivity.java" title="NetworkActivity.java" tooltip="NetworkApplication/src/com/example/networkapplication/NetworkActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NetworkApplication/src/com/example/networkapplication/NetworkActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1524" selectionTopPixel="0"/>
-</editor>
 </editors>
 <views>
-<view id="org.eclipse.team.ui.GenericHistoryView" partName="History"/>
+<view id="org.eclipse.team.ui.GenericHistoryView" partName="History">
+<viewState/>
+</view>
 <view id="org.eclipse.team.sync.views.SynchronizeView" partName="Synchronize">
+<viewState/>
+</view>
+<view id="org.eclipse.egit.ui.StagingView" partName="Git Staging">
+<viewState/>
+</view>
+<view id="org.eclipse.egit.ui.RepositoriesView" partName="Git Repositories">
+<viewState CommonNavigator.LINKING_ENABLED="0"/>
+</view>
+<view id="org.eclipse.egit.ui.ReflogView" partName="Git Reflog">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="com.android.ide.eclipse.ddms.views.LogCatView" partName="LogCat">
 <viewState/>
 </view>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
@@ -67,8 +65,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (3 items)"/>
-<category IMemento.internal.id="Warnings"/>
+<category IMemento.internal.id="Warnings (6 items)"/>
 <category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
@@ -111,22 +108,12 @@
 </customFilters>
 </viewState>
 </view>
-<view id="org.eclipse.egit.ui.StagingView" partName="Git Staging">
-<viewState/>
-</view>
-<view id="org.eclipse.egit.ui.RepositoriesView" partName="Git Repositories">
-<viewState CommonNavigator.LINKING_ENABLED="0"/>
-</view>
-<view id="org.eclipse.egit.ui.ReflogView" partName="Git Reflog">
-<viewState/>
-</view>
-<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
-<viewState/>
-</view>
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
-<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc">
+<viewState/>
+</view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -185,11 +172,12 @@
 <perspective_action id="com.android.ide.eclipse.hierarchyviewer.TreeViewPerspective"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
 <layout>
@@ -214,13 +202,14 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="250" ratioRight="750" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.7564516" ratioLeft="469" ratioRight="151" relationship="4" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.28413284" ratioLeft="385" ratioRight="970" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.61935484" ratioLeft="384" ratioRight="236" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
@@ -229,10 +218,11 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="right" ratio="0.7032668" ratioLeft="775" ratioRight="327" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="right" ratio="0.8475499" ratioLeft="934" ratioRight="168" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
@@ -271,33 +261,23 @@
 <view id="org.eclipse.egit.ui.StagingView"/>
 <view id="org.eclipse.egit.ui.ReflogView"/>
 <fastViewBars/>
-<layout>
-<mainWindow>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@57cd56df">
-<folder activePageID="org.eclipse.egit.ui.RepositoriesView" appearance="2" expanded="2">
-<page content="org.eclipse.egit.ui.RepositoriesView" label="Git Repositories"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.ui.internal.ViewStack@57cd56df">&#x0A;<folder activePageID="org.eclipse.egit.ui.RepositoriesView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.egit.ui.RepositoriesView" label="Git Repositories"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.ui.internal.ViewStack@57cd56df">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.ui.internal.ViewStack@57cd56df">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.32619926" ratioLeft="442" ratioRight="913" relationship="2" relative="org.eclipse.ui.internal.ViewStack@57cd56df"/>
-<info folder="true" part="bottom" ratio="0.49919742" ratioLeft="311" ratioRight="312" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.egit.ui.StagingView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<info folder="true" part="bottom" ratio="0.19032258" ratioLeft="118" ratioRight="502" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.egit.ui.StagingView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
 <page content="org.eclipse.team.ui.GenericHistoryView" label="History"/>
 <page content="org.eclipse.team.sync.views.SynchronizeView" label="Synchronize"/>
 <page content="org.eclipse.egit.ui.StagingView" label="Git Staging"/>
 <page content="org.eclipse.egit.ui.ReflogView" label="Git Reflog"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
@@ -311,36 +291,7 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LocationApplication/src/com/example/locationapplication/LocationActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/LocationApplication/res/layout/activity_location.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/LocationApplication/res/values/strings.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NetworkApplication/src/com/example/networkapplication/NetworkActivity.java"/>
-</editors>
-<item historyLabel="LocationActivity.java" index="0">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="activity_location.xml" index="1"/>
-<item historyLabel="LocationActivity.java" index="0">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="activity_location.xml" index="1"/>
-<item historyLabel="strings.xml" index="2"/>
-<item historyLabel="activity_location.xml" index="1"/>
-<item historyLabel="LocationActivity.java" index="0">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="LocationActivity.java" index="0">
-<position info="not_deleted" x="2147" y="0"/>
-</item>
-<item historyLabel="LocationActivity.java" index="0">
-<position info="not_deleted" x="880" y="0"/>
-</item>
-<item active="true" historyLabel="NetworkActivity.java" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -357,17 +308,50 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="map.xml" tooltip="TabActionBar/res/layout/map.xml">
+<persistable path="/TabActionBar/res/layout/map.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapFragment.java" tooltip="TabActionBar/src/com/example/schmap/MapFragment.java">
+<persistable path="/TabActionBar/src/com/example/schmap/MapFragment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapFragment.java" tooltip="TabActionBar/src/com/example/tabactionbar/MapFragment.java">
+<persistable path="/TabActionBar/src/com/example/tabactionbar/MapFragment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapActivity.java" tooltip="TabActionBar/src/com/example/schmap/MapActivity.java">
+<persistable path="/TabActionBar/src/com/example/schmap/MapActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_network.xml" tooltip="NetworkApplication/res/layout/activity_network.xml">
+<persistable path="/NetworkApplication/res/layout/activity_network.xml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NetworkActivity.java" tooltip="NetworkApplication/src/com/example/networkapplication/NetworkActivity.java">
 <persistable path="/NetworkApplication/src/com/example/networkapplication/NetworkActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" tooltip="LocationApplication/res/values/strings.xml">
-<persistable path="/LocationApplication/res/values/strings.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MeetFragment.java" tooltip="SchMap/src/com/example/schmap/MeetFragment.java">
+<persistable path="/SchMap/src/com/example/schmap/MeetFragment.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_location.xml" tooltip="LocationApplication/res/layout/activity_location.xml">
-<persistable path="/LocationApplication/res/layout/activity_location.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="map.xml" tooltip="SchMap/res/layout/map.xml">
+<persistable path="/SchMap/res/layout/map.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LocationActivity.java" tooltip="LocationApplication/src/com/example/locationapplication/LocationActivity.java">
-<persistable path="/LocationApplication/src/com/example/locationapplication/LocationActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="SchMap/src/com/example/schmap/MainActivity.java">
+<persistable path="/SchMap/src/com/example/schmap/MainActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapFragment.java" tooltip="SchMap/src/com/example/schmap/MapFragment.java">
+<persistable path="/SchMap/src/com/example/schmap/MapFragment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapActivity.java" tooltip="SchMap/src/com/example/schmap/MapActivity.java">
+<persistable path="/SchMap/src/com/example/schmap/MapActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="SchMap/AndroidManifest.xml">
+<persistable path="/SchMap/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ToDoFragment.java" tooltip="SchMap/src/com/example/schmap/ToDoFragment.java">
+<persistable path="/SchMap/src/com/example/schmap/ToDoFragment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SignUpActivity.java" tooltip="SchMap/src/com/example/schmap/SignUpActivity.java">
+<persistable path="/SchMap/src/com/example/schmap/SignUpActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ScheduleFragment.java" tooltip="SchMap/src/com/example/schmap/ScheduleFragment.java">
+<persistable path="/SchMap/src/com/example/schmap/ScheduleFragment.java"/>
 </file>
 </mruList>
 </workbench>
