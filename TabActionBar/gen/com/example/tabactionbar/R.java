@@ -24,13 +24,13 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080020;
+        public static final int action_settings=0x7f080023;
         public static final int add_course_button=0x7f08000a;
         public static final int add_course_dialog=0x7f080008;
         public static final int add_meet_course=0x7f080012;
         public static final int auto_complete_course=0x7f080009;
         public static final int confirm_password_sign_up=0x7f080006;
-        public static final int contentFragment=0x7f08001f;
+        public static final int contentFragment=0x7f080022;
         public static final int course_fragment=0x7f08000d;
         public static final int course_grid_view=0x7f080011;
         public static final int course_home_meet=0x7f080010;
@@ -44,19 +44,22 @@ public final class R {
         public static final int email_sign_up=0x7f080004;
         public static final int group_name=0x7f08000b;
         public static final int login=0x7f080002;
-        public static final int mapTab=0x7f08001a;
-        public static final int mapText=0x7f08001b;
-        public static final int meetContentFragment=0x7f08001c;
+        public static final int map=0x7f08001a;
+        public static final int meBox=0x7f08001e;
+        public static final int meetBox=0x7f08001d;
+        public static final int meetContentFragment=0x7f08001f;
         public static final int password=0x7f080001;
         public static final int password_sign_up=0x7f080005;
         public static final int removeCourse=0x7f08000f;
-        public static final int scheduleTab=0x7f08001d;
-        public static final int scheduleText=0x7f08001e;
+        public static final int scheduleBox=0x7f08001b;
+        public static final int scheduleTab=0x7f080020;
+        public static final int scheduleText=0x7f080021;
         public static final int sign_up=0x7f080003;
         public static final int sign_up_page=0x7f080007;
         public static final int submit_new_task=0x7f080016;
         public static final int tab1=0x7f080017;
         public static final int task_name=0x7f080014;
+        public static final int toDoBox=0x7f08001c;
     }
     public static final class layout {
         public static final int activity_log_in=0x7f030000;
