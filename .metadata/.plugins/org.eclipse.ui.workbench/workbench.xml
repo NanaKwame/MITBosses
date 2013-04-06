@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="15" version="2.0">
+<workbench progressCount="22" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="1024" x="125" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -18,7 +18,7 @@
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
@@ -37,28 +37,50 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LocationActivity.java" partName="LocationActivity.java" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/LocationApplication/src/com/example/locationapplication/LocationActivity.java" title="LocationActivity.java" tooltip="LocationApplication/src/com/example/locationapplication/LocationActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LocationApplication/src/com/example/locationapplication/LocationActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="880" selectionTopPixel="109"/>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="SchMap Manifest" path="C:/Users/user/git/MITBosses/TabActionBar/AndroidManifest.xml" title="SchMap Manifest" tooltip="SchMap/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SchMap/AndroidManifest.xml"/>
 </editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_location.xml" partName="activity_location.xml" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/LocationApplication/res/layout/activity_location.xml" title="activity_location.xml" tooltip="LocationApplication/res/layout/activity_location.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LocationApplication/res/layout/activity_location.xml"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapFragment.java" partName="MapFragment.java" path="C:/Users/user/git/MITBosses/TabActionBar/src/com/example/schmap/MapFragment.java" title="MapFragment.java" tooltip="SchMap/src/com/example/schmap/MapFragment.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SchMap/src/com/example/schmap/MapFragment.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="663" selectionTopPixel="0"/>
 </editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" partName="strings.xml" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/LocationApplication/res/values/strings.xml" title="strings.xml" tooltip="LocationApplication/res/values/strings.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LocationApplication/res/values/strings.xml"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" partName="MainActivity.java" path="C:/Users/user/git/MITBosses/TabActionBar/src/com/example/schmap/MainActivity.java" title="MainActivity.java" tooltip="SchMap/src/com/example/schmap/MainActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SchMap/src/com/example/schmap/MainActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="599" selectionTopPixel="75"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NetworkActivity.java" partName="NetworkActivity.java" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/NetworkApplication/src/com/example/networkapplication/NetworkActivity.java" title="NetworkActivity.java" tooltip="NetworkApplication/src/com/example/networkapplication/NetworkActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NetworkApplication/src/com/example/networkapplication/NetworkActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1524" selectionTopPixel="0"/>
+<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="map.xml" partName="map.xml" path="C:/Users/user/git/MITBosses/TabActionBar/res/layout/map.xml" title="map.xml" tooltip="SchMap/res/layout/map.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SchMap/res/layout/map.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MeetFragment.java" partName="MeetFragment.java" path="C:/Users/user/git/MITBosses/TabActionBar/src/com/example/schmap/MeetFragment.java" title="MeetFragment.java" tooltip="SchMap/src/com/example/schmap/MeetFragment.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SchMap/src/com/example/schmap/MeetFragment.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
-<view id="org.eclipse.team.ui.GenericHistoryView" partName="History"/>
+<view id="org.eclipse.team.ui.GenericHistoryView" partName="History">
+<viewState/>
+</view>
 <view id="org.eclipse.team.sync.views.SynchronizeView" partName="Synchronize">
+<viewState/>
+</view>
+<view id="org.eclipse.egit.ui.StagingView" partName="Git Staging">
+<viewState/>
+</view>
+<view id="org.eclipse.egit.ui.RepositoriesView" partName="Git Repositories">
+<viewState CommonNavigator.LINKING_ENABLED="0"/>
+</view>
+<view id="org.eclipse.egit.ui.ReflogView" partName="Git Reflog">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="com.android.ide.eclipse.ddms.views.LogCatView" partName="LogCat">
 <viewState/>
 </view>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
@@ -66,11 +88,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings (3 items)"/>
-<category IMemento.internal.id="Warnings"/>
-<category IMemento.internal.id="Errors"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -111,22 +128,12 @@
 </customFilters>
 </viewState>
 </view>
-<view id="org.eclipse.egit.ui.StagingView" partName="Git Staging">
-<viewState/>
-</view>
-<view id="org.eclipse.egit.ui.RepositoriesView" partName="Git Repositories">
-<viewState CommonNavigator.LINKING_ENABLED="0"/>
-</view>
-<view id="org.eclipse.egit.ui.ReflogView" partName="Git Reflog">
-<viewState/>
-</view>
-<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
-<viewState/>
-</view>
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
-<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc">
+<viewState/>
+</view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -185,11 +192,12 @@
 <perspective_action id="com.android.ide.eclipse.hierarchyviewer.TreeViewPerspective"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
 <layout>
@@ -214,13 +222,14 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="250" ratioRight="750" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.7564516" ratioLeft="469" ratioRight="151" relationship="4" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.28413284" ratioLeft="385" ratioRight="970" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.61935484" ratioLeft="384" ratioRight="236" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
@@ -229,10 +238,11 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="right" ratio="0.7032668" ratioLeft="775" ratioRight="327" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="right" ratio="0.8475499" ratioLeft="934" ratioRight="168" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
@@ -289,7 +299,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.32619926" ratioLeft="442" ratioRight="913" relationship="2" relative="org.eclipse.ui.internal.ViewStack@57cd56df"/>
-<info folder="true" part="bottom" ratio="0.49919742" ratioLeft="311" ratioRight="312" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.19032258" ratioLeft="118" ratioRight="502" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.egit.ui.StagingView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
 <page content="org.eclipse.team.ui.GenericHistoryView" label="History"/>
@@ -313,32 +323,152 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LocationApplication/src/com/example/locationapplication/LocationActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/LocationApplication/res/layout/activity_location.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/LocationApplication/res/values/strings.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NetworkApplication/src/com/example/networkapplication/NetworkActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TabActionBar/src/com/example/tabactionbar/MapFragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/TabActionBar/res/layout/map.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/TabActionBar/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SchMap/src/com/example/schmap/LogInActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/SchMap/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SchMap/src/com/example/schmap/InitListTodoFragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SchMap/src/com/example/schmap/MainActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SchMap/src/com/example/schmap/MapActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SchMap/src/com/example/schmap/MapFragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SchMap/src/com/example/schmap/MeetFragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SchMap/src/com/example/schmap/ScheduleFragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SchMap/src/com/example/schmap/SignUpActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SchMap/src/com/example/schmap/ToDoFragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/SchMap/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SchMap/src/com/example/schmap/MapFragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SchMap/src/com/example/schmap/MainActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SchMap/src/com/example/schmap/MeetFragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/SchMap/res/layout/map.xml"/>
 </editors>
-<item historyLabel="LocationActivity.java" index="0">
+<item historyLabel="MapFragment.java" index="0">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="activity_location.xml" index="1"/>
-<item historyLabel="LocationActivity.java" index="0">
+<item historyLabel="map.xml" index="1"/>
+<item historyLabel="MapFragment.java" index="0">
+<position info="not_deleted" x="508" y="0"/>
+</item>
+<item historyLabel="TabActionBar Manifest" index="2"/>
+<item historyLabel="LogInActivity.java" index="3">
+<position/>
+</item>
+<item historyLabel="SchMap Manifest" index="4"/>
+<item historyLabel="InitListTodoFragment.java" index="5">
+<position info="not_deleted" x="634" y="6"/>
+</item>
+<item historyLabel="LogInActivity.java" index="3">
+<position info="not_deleted" x="251" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="6">
+<position info="not_deleted" x="573" y="0"/>
+</item>
+<item historyLabel="MapActivity.java" index="7">
+<position/>
+</item>
+<item historyLabel="SchMap Manifest" index="4"/>
+<item historyLabel="MapFragment.java" index="8">
+<position info="not_deleted" x="54" y="0"/>
+</item>
+<item historyLabel="MeetFragment.java" index="9">
+<position info="not_deleted" x="54" y="0"/>
+</item>
+<item historyLabel="ScheduleFragment.java" index="10">
+<position info="not_deleted" x="54" y="0"/>
+</item>
+<item historyLabel="SignUpActivity.java" index="11">
+<position info="not_deleted" x="54" y="0"/>
+</item>
+<item historyLabel="ToDoFragment.java" index="12">
+<position info="not_deleted" x="81" y="0"/>
+</item>
+<item historyLabel="SchMap Manifest" index="4"/>
+<item historyLabel="ScheduleFragment.java" index="10">
+<position info="not_deleted" x="54" y="0"/>
+</item>
+<item historyLabel="ToDoFragment.java" index="12">
+<position info="not_deleted" x="81" y="0"/>
+</item>
+<item historyLabel="SchMap Manifest" index="13"/>
+<item historyLabel="MapActivity.java" index="7">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="activity_location.xml" index="1"/>
-<item historyLabel="strings.xml" index="2"/>
-<item historyLabel="activity_location.xml" index="1"/>
-<item historyLabel="LocationActivity.java" index="0">
+<item historyLabel="MapFragment.java" index="14">
+<position info="not_deleted" x="346" y="0"/>
+</item>
+<item historyLabel="SchMap Manifest" index="13"/>
+<item historyLabel="MapActivity.java" index="7">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="LocationActivity.java" index="0">
-<position info="not_deleted" x="2147" y="0"/>
-</item>
-<item historyLabel="LocationActivity.java" index="0">
-<position info="not_deleted" x="880" y="0"/>
-</item>
-<item active="true" historyLabel="NetworkActivity.java" index="3">
+<item historyLabel="SchMap Manifest" index="13"/>
+<item historyLabel="MainActivity.java" index="15">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MapFragment.java" index="14">
+<position info="not_deleted" x="346" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MeetFragment.java" index="16">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MapFragment.java" index="14">
+<position info="not_deleted" x="346" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MapFragment.java" index="14">
+<position info="not_deleted" x="533" y="0"/>
+</item>
+<item historyLabel="map.xml" index="17"/>
+<item historyLabel="MapFragment.java" index="14">
+<position info="not_deleted" x="560" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MapFragment.java" index="14">
+<position info="not_deleted" x="1334" y="0"/>
+</item>
+<item historyLabel="MeetFragment.java" index="16">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="15">
+<position info="not_deleted" x="779" y="4"/>
+</item>
+<item historyLabel="MapFragment.java" index="14">
+<position info="not_deleted" x="1334" y="0"/>
+</item>
+<item historyLabel="MeetFragment.java" index="16">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MapFragment.java" index="14">
+<position info="not_deleted" x="654" y="8"/>
+</item>
+<item historyLabel="MeetFragment.java" index="16">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="15">
+<position info="not_deleted" x="779" y="4"/>
+</item>
+<item historyLabel="MapFragment.java" index="14">
+<position info="not_deleted" x="663" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="15">
+<position info="not_deleted" x="547" y="0"/>
+</item>
+<item historyLabel="map.xml" index="17"/>
+<item historyLabel="MainActivity.java" index="15">
+<position info="not_deleted" x="2889" y="0"/>
+</item>
+<item historyLabel="map.xml" index="17"/>
+<item active="true" historyLabel="MainActivity.java" index="15">
+<position info="not_deleted" x="2889" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -357,17 +487,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NetworkActivity.java" tooltip="NetworkApplication/src/com/example/networkapplication/NetworkActivity.java">
-<persistable path="/NetworkApplication/src/com/example/networkapplication/NetworkActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MeetFragment.java" tooltip="SchMap/src/com/example/schmap/MeetFragment.java">
+<persistable path="/SchMap/src/com/example/schmap/MeetFragment.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" tooltip="LocationApplication/res/values/strings.xml">
-<persistable path="/LocationApplication/res/values/strings.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="map.xml" tooltip="SchMap/res/layout/map.xml">
+<persistable path="/SchMap/res/layout/map.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_location.xml" tooltip="LocationApplication/res/layout/activity_location.xml">
-<persistable path="/LocationApplication/res/layout/activity_location.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="SchMap/src/com/example/schmap/MainActivity.java">
+<persistable path="/SchMap/src/com/example/schmap/MainActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LocationActivity.java" tooltip="LocationApplication/src/com/example/locationapplication/LocationActivity.java">
-<persistable path="/LocationApplication/src/com/example/locationapplication/LocationActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapFragment.java" tooltip="SchMap/src/com/example/schmap/MapFragment.java">
+<persistable path="/SchMap/src/com/example/schmap/MapFragment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapActivity.java" tooltip="SchMap/src/com/example/schmap/MapActivity.java">
+<persistable path="/SchMap/src/com/example/schmap/MapActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="SchMap/AndroidManifest.xml">
+<persistable path="/SchMap/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ToDoFragment.java" tooltip="SchMap/src/com/example/schmap/ToDoFragment.java">
+<persistable path="/SchMap/src/com/example/schmap/ToDoFragment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SignUpActivity.java" tooltip="SchMap/src/com/example/schmap/SignUpActivity.java">
+<persistable path="/SchMap/src/com/example/schmap/SignUpActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ScheduleFragment.java" tooltip="SchMap/src/com/example/schmap/ScheduleFragment.java">
+<persistable path="/SchMap/src/com/example/schmap/ScheduleFragment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LogInActivity.java" tooltip="SchMap/src/com/example/schmap/LogInActivity.java">
+<persistable path="/SchMap/src/com/example/schmap/LogInActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InitListTodoFragment.java" tooltip="SchMap/src/com/example/schmap/InitListTodoFragment.java">
+<persistable path="/SchMap/src/com/example/schmap/InitListTodoFragment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="TabActionBar/AndroidManifest.xml">
+<persistable path="/TabActionBar/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="map.xml" tooltip="TabActionBar/res/layout/map.xml">
+<persistable path="/TabActionBar/res/layout/map.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapFragment.java" tooltip="TabActionBar/src/com/example/tabactionbar/MapFragment.java">
+<persistable path="/TabActionBar/src/com/example/tabactionbar/MapFragment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="GPStrack/src/com/example/gpstrack/MainActivity.java">
+<persistable path="/GPStrack/src/com/example/gpstrack/MainActivity.java"/>
 </file>
 </mruList>
 </workbench>
