@@ -17,7 +17,6 @@ import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -43,6 +42,7 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 				
 //		Intent fromLoginIntent = getIntent();
 //		String email = fromLoginIntent.getStringExtra(LogInActivity.USERNAME);
@@ -69,11 +69,11 @@ public class MainActivity extends Activity {
 		tab.setTabListener(tl2);
 		actionBar.addTab(tab);
 		
-		String mapLabel = getResources().getString(R.string.map);
+		final String mapLabel = getResources().getString(R.string.map);
 		tab = actionBar.newTab();
 		tab.setText(mapLabel);
 		TabListener<MapFragment> tl3 = new TabListener<MapFragment>(this,
-				mapLabel, MapFragment.class);
+				mapLabel,MapFragment.class);
 		tab.setTabListener(tl3);
 		actionBar.addTab(tab);
 		
@@ -128,10 +128,20 @@ public class MainActivity extends Activity {
 			mActivity = activity;
 			mTag = tag;
 			mClass = clz;
+			
+		}
+
+		@Override
+		public void onTabReselected(Tab tab, FragmentTransaction ft) {
+			// TODO Auto-generated method stub
+		
+			
 		}
 
 		@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+		@Override
 		public void onTabSelected(Tab tab, FragmentTransaction ft) {
+			// TODO Auto-generated method stub
 			// Check if the fragment is already initialized
 			if (mFragment == null) {
 				// If not, instantiate and add it to the activity
@@ -144,17 +154,19 @@ public class MainActivity extends Activity {
 		}
 
 		@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+		@Override
 		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+			// TODO Auto-generated method stub
 			if (mFragment != null) {
 				// Detach the fragment, because another one is being attached
 				ft.detach(mFragment);
 			}
 		}
-
-		public void onTabReselected(Tab tab, FragmentTransaction ft) {
-			// User selected the already selected tab. Usually do nothing.
-		}
 	}
+	
+	
+	
+	
 
 	/**
 	 * Popups the dialog in order to create a new task

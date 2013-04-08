@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:id="@+id/map"
+	  android:layout_width="match_parent"
+	  android:layout_height="match_parent"
+	  android:orientation="vertical"
+	  class="com.google.android.gms.maps.SupportMapFragment"
+		<CheckBox
+		    android:id="@+id/scheduleBox"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="Schedule  " />
+
+		<CheckBox
+		    android:id="@+id/toDoBox"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:text="ToDo      " />
+
+		<CheckBox
+		    android:id="@+id/meetBox"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:text="Meet      " />
+
+		<CheckBox
+		    android:id="@+id/meBox"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:enabled="true"
+		    android:text="Me        " />
+		/>
