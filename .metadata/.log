@@ -820,3 +820,6 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.core.resources 2 10035 2013-04-08 09:58:39.455
 !MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 4 4 2013-04-08 10:14:10.893
+!MESSAGE Invalid preference page path: XML Syntax

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ public class MapFragment extends Fragment {
 				Bundle savedInstanceState) {
 
 			setupInitialLayout();
+			Log.e("In MapFragment", "About to set up .map");
 			View view = inflater.inflate(R.layout.map, container, false);
 			
 			return view;
