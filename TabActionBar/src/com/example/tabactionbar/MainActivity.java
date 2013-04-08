@@ -72,8 +72,8 @@ public class MainActivity extends Activity {
 		final String mapLabel = getResources().getString(R.string.map);
 		tab = actionBar.newTab();
 		tab.setText(mapLabel);
-		TabListener<MapFragment> tl3 = new TabListener<MapFragment>(this,
-				mapLabel,MapFragment.class);
+		TabListener<MapFragFake> tl3 = new TabListener<MapFragFake>(this,
+				mapLabel,MapFragFake.class);
 		tab.setTabListener(tl3);
 		actionBar.addTab(tab);
 		
@@ -131,11 +131,20 @@ public class MainActivity extends Activity {
 			
 		}
 
+		@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 		@Override
 		public void onTabReselected(Tab tab, FragmentTransaction ft) {
 			// TODO Auto-generated method stub
-		
-			
+			// Check if the fragment is already initialized
+			if (mFragment == null) {
+				// If not, instantiate and add it to the activity
+				mFragment = Fragment.instantiate(mActivity, mClass.getName());
+				ft.add(android.R.id.content, mFragment, mTag);
+			} else {
+				// If it exists, simply attach it in order to show it
+				ft.attach(mFragment);
+			}
+
 		}
 
 		@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
@@ -174,6 +183,7 @@ public class MainActivity extends Activity {
 	 */
 	public void createTask(View v) {
 		Log.e("MainActivity", "The createTask method was called in this class");
+//		MapFragFake.addMarkerScedule("Just added", 42.34434, -71.09571, "poop");
 		Dialog dialog = getTaskDialog();
 		dialog.show();
 	}
