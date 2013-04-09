@@ -228,5 +228,9 @@ public class MapFragFake extends Fragment {
         if (f != null) 
             getFragmentManager().beginTransaction().remove(f).commit();
     }
+	
+
+
+
 }
 

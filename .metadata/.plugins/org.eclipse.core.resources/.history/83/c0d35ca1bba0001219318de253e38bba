@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -221,12 +220,8 @@ public class MapFragFake extends Fragment {
 		deleteAllMarkerTodo();
 	}
 	
-	@Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        MapFragment f = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
-        if (f != null) 
-            getFragmentManager().beginTransaction().remove(f).commit();
-    }
+
+
+
 }
 
