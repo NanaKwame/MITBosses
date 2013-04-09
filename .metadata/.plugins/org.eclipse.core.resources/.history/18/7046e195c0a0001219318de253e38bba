@@ -39,7 +39,6 @@ public class MapFragFake extends Fragment {
 	private CheckBox todoBox ;
 	private CheckBox meetBox ;
 	private CheckBox meBox  ;
-	private View view;
 	
 	
 
@@ -51,8 +50,7 @@ public class MapFragFake extends Fragment {
 			Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		//onClick setup for the check boxes
-		View view1 = inflater.inflate(R.layout.mapfragfake, container, false);
-		this.view=view1;
+		View view = inflater.inflate(R.layout.mapfragfake, container, false);
 		scheduleMarkerNames = new ArrayList<String>();
 		todoMarkerNames = new ArrayList<String>();
 		meetMarkerNames = new ArrayList<String>();
@@ -225,91 +223,98 @@ public class MapFragFake extends Fragment {
 	
 	
 	
-
-
+	
 	@Override
 	public void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		scheduleBox = (CheckBox) view.findViewById(R.id.scheduleBox);
-		scheduleBox.setBackgroundColor(Color.GREEN);
-		todoBox = (CheckBox) view.findViewById(R.id.toDoBox);
-		todoBox.setBackgroundColor(Color.RED);
-		meetBox= (CheckBox) view.findViewById(R.id.meetBox);
-		meetBox.setBackgroundColor(Color.YELLOW);
-		meBox = (CheckBox) view.findViewById(R.id.meBox);
-		meBox.setBackgroundColor(Color.BLUE);
-		scheduleBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-				// TODO Auto-generated method stub
-				if(arg1==true){
-					scheduleMarkers.clear();
-					for (int i = 0; i < scheduleMarkerNames.size(); i++) {
-						String name = scheduleMarkerNames.get(i);
-						scheduleMarkers.add(mMap.addMarker(new MarkerOptions().position(new LatLng(scheduleMarkersOnMap.get(name).get(0), scheduleMarkersOnMap.get(name).get(1))).title(name).icon(BitmapDescriptorFactory.defaultMarker(120))));
-					}
-					setUpMapIfNeeded();}
-				else{
-					for (int i = 0; i < scheduleMarkers.size(); i++) {
-						Marker mark=scheduleMarkers.get(i);
-						mark.remove();
-					}
-				}
-			} 
-        });
-		todoBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-				// TODO Auto-generated method stub
-				if(arg1==true){
-					todoMarkers.clear();
-					for (int i = 0; i < todoMarkerNames.size(); i++) {
-						String name = todoMarkerNames.get(i);
-						todoMarkers.add(mMap.addMarker(new MarkerOptions().position(new LatLng(todoMarkersOnMap.get(name).get(0), todoMarkersOnMap.get(name).get(1))).title(name).icon(BitmapDescriptorFactory.defaultMarker(0))));
-					}
-					setUpMapIfNeeded();}
-				else{
-					for (int i = 0; i < todoMarkers.size(); i++) {
-						Marker mark=todoMarkers.get(i);
-						mark.remove();
-					}
-				}
-			} 
-        });
-		meetBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-				// TODO Auto-generated method stub
-				if(arg1==true){
-					meetMarkers.clear();
-					for (int i = 0; i < meetMarkerNames.size(); i++) {
-						String name = meetMarkerNames.get(i);
-						meetMarkers.add(mMap.addMarker(new MarkerOptions().position(new LatLng(meetMarkersOnMap.get(name).get(0), meetMarkersOnMap.get(name).get(1))).title(name).icon(BitmapDescriptorFactory.defaultMarker(60))));
-					}
-					setUpMapIfNeeded();}
-				else{
-					for (int i = 0; i < meetMarkers.size(); i++) {
-						Marker mark=meetMarkers.get(i);
-						mark.remove();
-					}
-				}
-			} 
-        });
-		meBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-				// TODO Auto-generated method stub
-				if(arg1==true)
-					mMap.setMyLocationEnabled(true);
-				else
-					mMap.setMyLocationEnabled(false);
-			} 
-        });
-		
-		setUpMapIfNeeded();
-	
-		
+		//onClick setup for the check boxes
+				scheduleMarkerNames = new ArrayList<String>();
+				todoMarkerNames = new ArrayList<String>();
+				meetMarkerNames = new ArrayList<String>();
+				scheduleMarkers =  new ArrayList<Marker>();
+				todoMarkers = new ArrayList<Marker>();
+				meetMarkers = new ArrayList<Marker>();
+				scheduleMarkersOnMap=new HashMap<String, ArrayList<Double>>();
+				todoMarkersOnMap=new HashMap<String, ArrayList<Double>>();
+				meetMarkersOnMap=new HashMap<String, ArrayList<Double>>();
+				scheduleBox = (CheckBox) view.findViewById(R.id.scheduleBox);
+				scheduleBox.setBackgroundColor(Color.GREEN);
+				todoBox = (CheckBox) view.findViewById(R.id.toDoBox);
+				todoBox.setBackgroundColor(Color.RED);
+				meetBox= (CheckBox) view.findViewById(R.id.meetBox);
+				meetBox.setBackgroundColor(Color.YELLOW);
+				meBox = (CheckBox) view.findViewById(R.id.meBox);
+				meBox.setBackgroundColor(Color.BLUE);
+				scheduleBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+					@Override
+					public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+						// TODO Auto-generated method stub
+						if(arg1==true){
+							scheduleMarkers.clear();
+							for (int i = 0; i < scheduleMarkerNames.size(); i++) {
+								String name = scheduleMarkerNames.get(i);
+								scheduleMarkers.add(mMap.addMarker(new MarkerOptions().position(new LatLng(scheduleMarkersOnMap.get(name).get(0), scheduleMarkersOnMap.get(name).get(1))).title(name).icon(BitmapDescriptorFactory.defaultMarker(120))));
+							}
+							setUpMapIfNeeded();}
+						else{
+							for (int i = 0; i < scheduleMarkers.size(); i++) {
+								Marker mark=scheduleMarkers.get(i);
+								mark.remove();
+							}
+						}
+					} 
+		        });
+				todoBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+					@Override
+					public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+						// TODO Auto-generated method stub
+						if(arg1==true){
+							todoMarkers.clear();
+							for (int i = 0; i < todoMarkerNames.size(); i++) {
+								String name = todoMarkerNames.get(i);
+								todoMarkers.add(mMap.addMarker(new MarkerOptions().position(new LatLng(todoMarkersOnMap.get(name).get(0), todoMarkersOnMap.get(name).get(1))).title(name).icon(BitmapDescriptorFactory.defaultMarker(0))));
+							}
+							setUpMapIfNeeded();}
+						else{
+							for (int i = 0; i < todoMarkers.size(); i++) {
+								Marker mark=todoMarkers.get(i);
+								mark.remove();
+							}
+						}
+					} 
+		        });
+				meetBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+					@Override
+					public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+						// TODO Auto-generated method stub
+						if(arg1==true){
+							meetMarkers.clear();
+							for (int i = 0; i < meetMarkerNames.size(); i++) {
+								String name = meetMarkerNames.get(i);
+								meetMarkers.add(mMap.addMarker(new MarkerOptions().position(new LatLng(meetMarkersOnMap.get(name).get(0), meetMarkersOnMap.get(name).get(1))).title(name).icon(BitmapDescriptorFactory.defaultMarker(60))));
+							}
+							setUpMapIfNeeded();}
+						else{
+							for (int i = 0; i < meetMarkers.size(); i++) {
+								Marker mark=meetMarkers.get(i);
+								mark.remove();
+							}
+						}
+					} 
+		        });
+				meBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+					@Override
+					public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+						// TODO Auto-generated method stub
+						if(arg1==true)
+							mMap.setMyLocationEnabled(true);
+						else
+							mMap.setMyLocationEnabled(false);
+					} 
+		        });
+				
+				setUpMapIfNeeded();
 		
 	}
 

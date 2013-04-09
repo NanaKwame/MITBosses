@@ -231,6 +231,15 @@ public class MapFragFake extends Fragment {
 	public void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
+		scheduleMarkerNames = new ArrayList<String>();
+		todoMarkerNames = new ArrayList<String>();
+		meetMarkerNames = new ArrayList<String>();
+		scheduleMarkers =  new ArrayList<Marker>();
+		todoMarkers = new ArrayList<Marker>();
+		meetMarkers = new ArrayList<Marker>();
+		scheduleMarkersOnMap=new HashMap<String, ArrayList<Double>>();
+		todoMarkersOnMap=new HashMap<String, ArrayList<Double>>();
+		meetMarkersOnMap=new HashMap<String, ArrayList<Double>>();
 		scheduleBox = (CheckBox) view.findViewById(R.id.scheduleBox);
 		scheduleBox.setBackgroundColor(Color.GREEN);
 		todoBox = (CheckBox) view.findViewById(R.id.toDoBox);
