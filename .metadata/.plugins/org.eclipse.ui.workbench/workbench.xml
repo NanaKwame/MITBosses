@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="20" version="2.0">
+<workbench progressCount="24" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="1024" x="125" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -40,32 +40,28 @@
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
-<part id="5"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapFragment.java" partName="MapFragment.java" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/TabActionBar/src/com/example/tabactionbar/MapFragment.java" title="MapFragment.java" tooltip="TabActionBar/src/com/example/tabactionbar/MapFragment.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TabActionBar/src/com/example/tabactionbar/MapFragment.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="649" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ScheduleFragment.java" partName="ScheduleFragment.java" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/TabActionBar/src/com/example/tabactionbar/ScheduleFragment.java" title="ScheduleFragment.java" tooltip="TabActionBar/src/com/example/tabactionbar/ScheduleFragment.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TabActionBar/src/com/example/tabactionbar/ScheduleFragment.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="33" selectionTopPixel="0"/>
-</editor>
 <editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="mapfragfake.xml" partName="mapfragfake.xml" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/TabActionBar/res/layout/mapfragfake.xml" title="mapfragfake.xml" tooltip="TabActionBar/res/layout/mapfragfake.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TabActionBar/res/layout/mapfragfake.xml"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapFragFake.java" partName="MapFragFake.java" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/TabActionBar/src/com/example/tabactionbar/MapFragFake.java" title="MapFragFake.java" tooltip="TabActionBar/src/com/example/tabactionbar/MapFragFake.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapFragFake.java" partName="MapFragFake.java" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/TabActionBar/src/com/example/tabactionbar/MapFragFake.java" title="MapFragFake.java" tooltip="TabActionBar/src/com/example/tabactionbar/MapFragFake.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TabActionBar/src/com/example/tabactionbar/MapFragFake.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1710" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7890" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" partName="MainActivity.java" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/TabActionBar/src/com/example/tabactionbar/MainActivity.java" title="MainActivity.java" tooltip="TabActionBar/src/com/example/tabactionbar/MainActivity.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" partName="MainActivity.java" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/TabActionBar/src/com/example/tabactionbar/MainActivity.java" title="MainActivity.java" tooltip="TabActionBar/src/com/example/tabactionbar/MainActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TabActionBar/src/com/example/tabactionbar/MainActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="682" selectionTopPixel="2565"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4634" selectionTopPixel="1578"/>
 </editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" partName="strings.xml" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/TabActionBar/res/values/strings.xml" title="strings.xml" tooltip="TabActionBar/res/values/strings.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TabActionBar/res/values/strings.xml"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ToDoFragment.java" partName="ToDoFragment.java" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/TabActionBar/src/com/example/tabactionbar/ToDoFragment.java" title="ToDoFragment.java" tooltip="TabActionBar/src/com/example/tabactionbar/ToDoFragment.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TabActionBar/src/com/example/tabactionbar/ToDoFragment.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="742" selectionTopPixel="62"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InitListTodoFragment.java" partName="InitListTodoFragment.java" path="C:/Users/user/Desktop/Mob App/Workspace/MITBosses/TabActionBar/src/com/example/tabactionbar/InitListTodoFragment.java" title="InitListTodoFragment.java" tooltip="TabActionBar/src/com/example/tabactionbar/InitListTodoFragment.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/TabActionBar/src/com/example/tabactionbar/InitListTodoFragment.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="38"/>
 </editor>
 </editors>
 <views>
@@ -98,6 +94,9 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings (10 items)"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -233,9 +232,9 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.15055351" ratioLeft="204" ratioRight="1151" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.60967743" ratioLeft="378" ratioRight="242" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
+<info part="org.eclipse.ui.editorss" ratio="0.24575646" ratioLeft="333" ratioRight="1022" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.67580646" ratioLeft="419" ratioRight="201" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
@@ -327,143 +326,159 @@
 <workingSets/>
 <navigationHistory>
 <editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TabActionBar/src/com/example/tabactionbar/MapFragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TabActionBar/src/com/example/tabactionbar/MapFragFake.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TabActionBar/src/com/example/tabactionbar/MainActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/TabActionBar/res/layout/mapfragfake.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/TabActionBar/res/layout/create_task_dialog.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TabActionBar/src/com/example/tabactionbar/MapFragment.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TabActionBar/src/com/example/tabactionbar/MapFragFake.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/TabActionBar/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TabActionBar/src/com/example/tabactionbar/ScheduleFragment.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/TabActionBar/res/layout/map.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/TabActionBar/res/layout/activity_main.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/TabActionBar/res/values/strings.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/TabActionBar/res/layout/mapfragfake.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TabActionBar/src/com/example/tabactionbar/MapFragment.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TabActionBar/src/com/example/tabactionbar/MapFragFake.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TabActionBar/src/com/example/tabactionbar/ToDoFragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TabActionBar/src/com/example/tabactionbar/InitListTodoFragment.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/TabActionBar/src/com/example/tabactionbar/MainActivity.java"/>
 </editors>
-<item historyLabel="MapFragFake.java" index="3">
-<position info="not_deleted" x="643" y="0"/>
-</item>
-<item historyLabel="MapFragment.java" index="2">
-<position info="not_deleted" x="1029" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="4525" y="0"/>
-</item>
-<item historyLabel="MapFragment.java" index="2">
-<position info="not_deleted" x="1029" y="0"/>
-</item>
-<item historyLabel="MapFragFake.java" index="3">
-<position info="not_deleted" x="643" y="0"/>
-</item>
-<item historyLabel="MapFragment.java" index="2">
-<position info="not_deleted" x="1029" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="4525" y="0"/>
-</item>
-<item historyLabel="MapFragFake.java" index="3">
-<position info="not_deleted" x="643" y="0"/>
-</item>
-<item historyLabel="MapFragment.java" index="2">
-<position info="not_deleted" x="816" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="117" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="map.xml" index="5"/>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="mapfragfake.xml" index="1"/>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MapFragment.java" index="2">
-<position info="not_deleted" x="816" y="0"/>
-</item>
-<item historyLabel="MapFragFake.java" index="3">
-<position info="not_deleted" x="643" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="mapfragfake.xml" index="1"/>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="mapfragfake.xml" index="1"/>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="activity_main.xml" index="6"/>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="4552" y="7"/>
-</item>
-<item historyLabel="MapFragment.java" index="2">
-<position info="not_deleted" x="816" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="TabActionBar Manifest" index="4"/>
-<item historyLabel="MapFragment.java" index="2">
-<position info="not_deleted" x="816" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position/>
-</item>
-<item historyLabel="MapFragment.java" index="2">
-<position info="not_deleted" x="816" y="0"/>
-</item>
-<item historyLabel="MapFragFake.java" index="3">
-<position info="not_deleted" x="1529" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="2435" y="0"/>
-</item>
-<item historyLabel="MapFragment.java" index="2">
-<position info="not_deleted" x="500" y="0"/>
-</item>
-<item historyLabel="MapFragFake.java" index="3">
-<position info="not_deleted" x="5436" y="0"/>
-</item>
-<item historyLabel="MapFragment.java" index="2">
-<position info="not_deleted" x="500" y="0"/>
-</item>
-<item historyLabel="MapFragFake.java" index="3">
-<position info="not_deleted" x="4254" y="0"/>
-</item>
-<item historyLabel="TabActionBar Manifest" index="4"/>
-<item historyLabel="MapFragFake.java" index="3">
-<position info="not_deleted" x="4254" y="0"/>
-</item>
-<item historyLabel="mapfragfake.xml" index="1"/>
-<item historyLabel="MapFragFake.java" index="3">
-<position info="not_deleted" x="4254" y="0"/>
-</item>
-<item historyLabel="mapfragfake.xml" index="1"/>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="4683" y="0"/>
-</item>
-<item historyLabel="TabActionBar Manifest" index="4"/>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="4676" y="0"/>
-</item>
-<item historyLabel="strings.xml" index="7"/>
-<item historyLabel="mapfragfake.xml" index="8"/>
-<item historyLabel="MapFragment.java" index="9">
+<item historyLabel="MapFragment.java" index="0">
 <position info="not_deleted" x="649" y="0"/>
 </item>
-<item active="true" historyLabel="MapFragFake.java" index="10">
+<item historyLabel="MapFragFake.java" index="1">
 <position info="not_deleted" x="6366" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="682" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="5350" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="5369" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="5522" y="0"/>
+</item>
+<item historyLabel="create_task_dialog.xml" index="3"/>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="5323" y="0"/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position info="not_deleted" x="2061" y="0"/>
+</item>
+<item historyLabel="MapFragment.java" index="4">
+<position/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="5323" y="0"/>
+</item>
+<item historyLabel="ScheduleFragment.java" index="5">
+<position info="not_deleted" x="33" y="0"/>
+</item>
+<item historyLabel="MapFragment.java" index="4">
+<position info="not_deleted" x="742" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="2330" y="0"/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position info="not_deleted" x="2061" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="2113" y="0"/>
+</item>
+<item historyLabel="map.xml" index="6"/>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="2113" y="0"/>
+</item>
+<item historyLabel="MapFragment.java" index="4">
+<position info="not_deleted" x="742" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="2113" y="0"/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position info="not_deleted" x="3328" y="0"/>
+</item>
+<item historyLabel="mapfragfake.xml" index="7"/>
+<item historyLabel="MapFragFake.java" index="1">
+<position info="not_deleted" x="3328" y="0"/>
+</item>
+<item historyLabel="mapfragfake.xml" index="7"/>
+<item historyLabel="MapFragFake.java" index="1">
+<position info="not_deleted" x="11006" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="2113" y="0"/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position/>
+</item>
+<item historyLabel="ScheduleFragment.java" index="5">
+<position info="not_deleted" x="33" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="4242" y="0"/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position info="not_deleted" x="7972" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="4242" y="0"/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="4242" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="4882" y="0"/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position info="not_deleted" x="2191" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="5062" y="0"/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position info="not_deleted" x="2559" y="0"/>
+</item>
+<item historyLabel="MainActivity.java" index="2">
+<position info="not_deleted" x="5085" y="0"/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position info="not_deleted" x="2559" y="0"/>
+</item>
+<item historyLabel="ToDoFragment.java" index="8">
+<position info="not_deleted" x="742" y="0"/>
+</item>
+<item historyLabel="InitListTodoFragment.java" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position info="not_deleted" x="2559" y="0"/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position/>
+</item>
+<item historyLabel="MainActivity.java" index="10">
+<position info="not_deleted" x="4634" y="0"/>
+</item>
+<item historyLabel="MapFragFake.java" index="1">
+<position info="not_deleted" x="7890" y="0"/>
+</item>
+<item active="true" historyLabel="MainActivity.java" index="10">
+<position info="not_deleted" x="4634" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -482,6 +497,18 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InitListTodoFragment.java" tooltip="TabActionBar/src/com/example/tabactionbar/InitListTodoFragment.java">
+<persistable path="/TabActionBar/src/com/example/tabactionbar/InitListTodoFragment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ToDoFragment.java" tooltip="TabActionBar/src/com/example/tabactionbar/ToDoFragment.java">
+<persistable path="/TabActionBar/src/com/example/tabactionbar/ToDoFragment.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="map.xml" tooltip="TabActionBar/res/layout/map.xml">
+<persistable path="/TabActionBar/res/layout/map.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="create_task_dialog.xml" tooltip="TabActionBar/res/layout/create_task_dialog.xml">
+<persistable path="/TabActionBar/res/layout/create_task_dialog.xml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="strings.xml" tooltip="TabActionBar/res/values/strings.xml">
 <persistable path="/TabActionBar/res/values/strings.xml"/>
 </file>
@@ -514,18 +541,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapFragmentTab.java" tooltip="TabActionBar/src/com/example/tabactionbar/MapFragmentTab.java">
 <persistable path="/TabActionBar/src/com/example/tabactionbar/MapFragmentTab.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InitListTodoFragment.java" tooltip="TabActionBar/src/com/example/tabactionbar/InitListTodoFragment.java">
-<persistable path="/TabActionBar/src/com/example/tabactionbar/InitListTodoFragment.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="list_of_tasks.xml" tooltip="TabActionBar/res/layout/list_of_tasks.xml">
-<persistable path="/TabActionBar/res/layout/list_of_tasks.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="todo.xml" tooltip="TabActionBar/res/layout/todo.xml">
-<persistable path="/TabActionBar/res/layout/todo.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ToDoFragment.java" tooltip="TabActionBar/src/com/example/tabactionbar/ToDoFragment.java">
-<persistable path="/TabActionBar/src/com/example/tabactionbar/ToDoFragment.java"/>
 </file>
 </mruList>
 </workbench>

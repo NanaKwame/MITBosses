@@ -136,14 +136,6 @@ public class MainActivity extends Activity {
 		public void onTabReselected(Tab tab, FragmentTransaction ft) {
 			// TODO Auto-generated method stub
 			// Check if the fragment is already initialized
-			if (mFragment == null) {
-				// If not, instantiate and add it to the activity
-				mFragment = Fragment.instantiate(mActivity, mClass.getName());
-				ft.add(android.R.id.content, mFragment, mTag);
-			} else {
-				// If it exists, simply attach it in order to show it
-				ft.attach(mFragment);
-			}
 
 		}
 
@@ -158,7 +150,7 @@ public class MainActivity extends Activity {
 				ft.add(android.R.id.content, mFragment, mTag);
 			} else {
 				// If it exists, simply attach it in order to show it
-				ft.attach(mFragment);
+				ft.show(mFragment);
 			}
 		}
 
@@ -168,7 +160,7 @@ public class MainActivity extends Activity {
 			// TODO Auto-generated method stub
 			if (mFragment != null) {
 				// Detach the fragment, because another one is being attached
-				ft.detach(mFragment);
+				ft.hide(mFragment);
 			}
 		}
 	}

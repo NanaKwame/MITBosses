@@ -16,6 +16,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,15 +27,15 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MapFragFake extends Fragment {
 	private GoogleMap mMap;
-	private static HashMap<String, ArrayList<Double>> scheduleMarkersOnMap;
-	private static HashMap<String, ArrayList<Double>> todoMarkersOnMap;
-	private static HashMap<String, ArrayList<Double>> meetMarkersOnMap;
-	private static ArrayList<String> scheduleMarkerNames;
-	private static ArrayList<String> todoMarkerNames;
-	private static ArrayList<String> meetMarkerNames;
-	private ArrayList<Marker> scheduleMarkers;
-	private ArrayList<Marker> todoMarkers;
-	private static ArrayList<Marker> meetMarkers;
+	private static HashMap<String, ArrayList<Double>> scheduleMarkersOnMap = new HashMap<String, ArrayList<Double>>();
+	private static HashMap<String, ArrayList<Double>> todoMarkersOnMap = new HashMap<String, ArrayList<Double>>();
+	private static HashMap<String, ArrayList<Double>> meetMarkersOnMap= new HashMap<String, ArrayList<Double>>();
+	private static ArrayList<String> scheduleMarkerNames = new ArrayList<String>();
+	private static ArrayList<String> todoMarkerNames = new ArrayList<String>();
+	private static ArrayList<String> meetMarkerNames= new ArrayList<String>();
+	private ArrayList<Marker> scheduleMarkers= new ArrayList<Marker>();
+	private ArrayList<Marker> todoMarkers= new ArrayList<Marker>();
+	private static ArrayList<Marker> meetMarkers = new ArrayList<Marker>();
 	private CheckBox scheduleBox ;
 	private CheckBox todoBox ;
 	private CheckBox meetBox ;
@@ -53,15 +54,6 @@ public class MapFragFake extends Fragment {
 		//onClick setup for the check boxes
 		View view1 = inflater.inflate(R.layout.mapfragfake, container, false);
 		this.view=view1;
-		scheduleMarkerNames = new ArrayList<String>();
-		todoMarkerNames = new ArrayList<String>();
-		meetMarkerNames = new ArrayList<String>();
-		scheduleMarkers =  new ArrayList<Marker>();
-		todoMarkers = new ArrayList<Marker>();
-		meetMarkers = new ArrayList<Marker>();
-		scheduleMarkersOnMap=new HashMap<String, ArrayList<Double>>();
-		todoMarkersOnMap=new HashMap<String, ArrayList<Double>>();
-		meetMarkersOnMap=new HashMap<String, ArrayList<Double>>();
 		scheduleBox = (CheckBox) view.findViewById(R.id.scheduleBox);
 		scheduleBox.setBackgroundColor(Color.GREEN);
 		todoBox = (CheckBox) view.findViewById(R.id.toDoBox);
@@ -225,12 +217,14 @@ public class MapFragFake extends Fragment {
 	
 	
 	
-
-
+	
+	
+	
+	
 	@Override
-	public void onResume() {
+	public void onStart() {
 		// TODO Auto-generated method stub
-		super.onResume();
+		super.onStart();
 		scheduleBox = (CheckBox) view.findViewById(R.id.scheduleBox);
 		scheduleBox.setBackgroundColor(Color.GREEN);
 		todoBox = (CheckBox) view.findViewById(R.id.toDoBox);
@@ -308,20 +302,14 @@ public class MapFragFake extends Fragment {
         });
 		
 		setUpMapIfNeeded();
-	
-		
-		
 	}
+
 
 
 
 	@Override
     public void onDestroyView() {
         super.onDestroyView();
-        meBox.setActivated(false);
-        meetBox.setActivated(false);
-        scheduleBox.setActivated(false);
-        todoBox.setActivated(false);
         MapFragment f = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
         if (f != null) 
             getFragmentManager().beginTransaction().remove(f).commit();
