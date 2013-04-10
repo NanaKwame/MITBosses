@@ -994,3 +994,174 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.ui 4 4 2013-04-09 10:39:42.390
 !MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2013-04-09 10:43:12.538 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-04-09 10:43:27.624
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 4 4 2013-04-09 11:26:33.891
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2013-04-09 11:40:18.904 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-04-09 11:40:33.935
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 4 4 2013-04-09 12:21:39.726
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2013-04-09 12:51:46.897 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -data C:\Users\user\Desktop\Mob App\Workspace\MITBosses -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2013-04-09 12:54:07.737
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2013-04-09 17:57:29.477 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.7.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -data C:\Users\user\Desktop\Mob App\Workspace\MITBosses -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-04-09 17:57:31.220
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 4 4 2013-04-09 18:01:23.814
+!MESSAGE Invalid preference page path: XML Syntax
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:33.667
+!MESSAGE schedule.xml: Couldn't resolve resource @string/a1
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.045
+!MESSAGE schedule.xml: Couldn't resolve resource @string/a2
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.067
+!MESSAGE schedule.xml: Couldn't resolve resource @string/a3
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.078
+!MESSAGE schedule.xml: Couldn't resolve resource @string/a4
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.088
+!MESSAGE schedule.xml: Couldn't resolve resource @string/a5
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.100
+!MESSAGE schedule.xml: Couldn't resolve resource @string/a6
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.110
+!MESSAGE schedule.xml: Couldn't resolve resource @string/a7
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.121
+!MESSAGE schedule.xml: Couldn't resolve resource @string/b1
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.131
+!MESSAGE schedule.xml: Couldn't resolve resource @string/b2
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.143
+!MESSAGE schedule.xml: Couldn't resolve resource @string/b3
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.165
+!MESSAGE schedule.xml: Couldn't resolve resource @string/b4
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.179
+!MESSAGE schedule.xml: Couldn't resolve resource @string/b5
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.189
+!MESSAGE schedule.xml: Couldn't resolve resource @string/b6
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.200
+!MESSAGE schedule.xml: Couldn't resolve resource @string/b7
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.210
+!MESSAGE schedule.xml: Couldn't resolve resource @string/c1
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.220
+!MESSAGE schedule.xml: Couldn't resolve resource @string/c2
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.229
+!MESSAGE schedule.xml: Couldn't resolve resource @string/c3
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.238
+!MESSAGE schedule.xml: Couldn't resolve resource @string/c4
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.248
+!MESSAGE schedule.xml: Couldn't resolve resource @string/c5
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.260
+!MESSAGE schedule.xml: Couldn't resolve resource @string/c6
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.269
+!MESSAGE schedule.xml: Couldn't resolve resource @string/c7
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.279
+!MESSAGE schedule.xml: Couldn't resolve resource @string/d1
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.288
+!MESSAGE schedule.xml: Couldn't resolve resource @string/d2
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.297
+!MESSAGE schedule.xml: Couldn't resolve resource @string/d3
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.306
+!MESSAGE schedule.xml: Couldn't resolve resource @string/d4
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.315
+!MESSAGE schedule.xml: Couldn't resolve resource @string/d5
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.324
+!MESSAGE schedule.xml: Couldn't resolve resource @string/d6
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.337
+!MESSAGE schedule.xml: Couldn't resolve resource @string/d7
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.348
+!MESSAGE schedule.xml: Couldn't resolve resource @string/e1
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.359
+!MESSAGE schedule.xml: Couldn't resolve resource @string/e2
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.370
+!MESSAGE schedule.xml: Couldn't resolve resource @string/e3
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.382
+!MESSAGE schedule.xml: Couldn't resolve resource @string/e4
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.392
+!MESSAGE schedule.xml: Couldn't resolve resource @string/e5
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.403
+!MESSAGE schedule.xml: Couldn't resolve resource @string/e6
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.413
+!MESSAGE schedule.xml: Couldn't resolve resource @string/e7
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.424
+!MESSAGE schedule.xml: Couldn't resolve resource @string/f1
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.435
+!MESSAGE schedule.xml: Couldn't resolve resource @string/f2
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.446
+!MESSAGE schedule.xml: Couldn't resolve resource @string/f3
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.459
+!MESSAGE schedule.xml: Couldn't resolve resource @string/f4
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.472
+!MESSAGE schedule.xml: Couldn't resolve resource @string/f5
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.483
+!MESSAGE schedule.xml: Couldn't resolve resource @string/f6
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-04-09 18:17:34.493
+!MESSAGE schedule.xml: Couldn't resolve resource @string/f7

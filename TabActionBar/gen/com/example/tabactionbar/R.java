@@ -140,15 +140,61 @@ containing a value of this type.
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int schmap=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f040028;
+        public static final int action_settings=0x7f040054;
         public static final int add_course_button=0x7f04000f;
         public static final int add_course_dialog=0x7f04000d;
         public static final int add_meet_course=0x7f040017;
         public static final int auto_complete_course=0x7f04000e;
+        public static final int bA1=0x7f040028;
+        public static final int bA2=0x7f040029;
+        public static final int bA3=0x7f04002a;
+        public static final int bA4=0x7f04002b;
+        public static final int bA5=0x7f04002c;
+        public static final int bA6=0x7f04002d;
+        public static final int bA7=0x7f04002e;
+        public static final int bAddEvent=0x7f040052;
+        public static final int bB1=0x7f04002f;
+        public static final int bB2=0x7f040030;
+        public static final int bB3=0x7f040031;
+        public static final int bB4=0x7f040032;
+        public static final int bB5=0x7f040033;
+        public static final int bB6=0x7f040034;
+        public static final int bB7=0x7f040035;
+        public static final int bC1=0x7f040036;
+        public static final int bC2=0x7f040037;
+        public static final int bC3=0x7f040038;
+        public static final int bC4=0x7f040039;
+        public static final int bC5=0x7f04003a;
+        public static final int bC6=0x7f04003b;
+        public static final int bC7=0x7f04003c;
+        public static final int bD1=0x7f04003d;
+        public static final int bD2=0x7f04003e;
+        public static final int bD3=0x7f04003f;
+        public static final int bD4=0x7f040040;
+        public static final int bD5=0x7f040041;
+        public static final int bD6=0x7f040042;
+        public static final int bD7=0x7f040043;
+        public static final int bE1=0x7f040044;
+        public static final int bE2=0x7f040045;
+        public static final int bE3=0x7f040046;
+        public static final int bE4=0x7f040047;
+        public static final int bE5=0x7f040048;
+        public static final int bE6=0x7f040049;
+        public static final int bE7=0x7f04004a;
+        public static final int bF1=0x7f04004b;
+        public static final int bF2=0x7f04004c;
+        public static final int bF3=0x7f04004d;
+        public static final int bF4=0x7f04004e;
+        public static final int bF5=0x7f04004f;
+        public static final int bF6=0x7f040050;
+        public static final int bF7=0x7f040051;
+        public static final int bNextMonth=0x7f040027;
+        public static final int bPreviousMonth=0x7f040025;
         public static final int confirm_password_sign_up=0x7f04000b;
-        public static final int contentFragment=0x7f040027;
+        public static final int contentFragment=0x7f040053;
         public static final int course_fragment=0x7f040012;
         public static final int course_grid_view=0x7f040016;
         public static final int course_home_meet=0x7f040015;
@@ -174,8 +220,6 @@ containing a value of this type.
         public static final int removeCourse=0x7f040014;
         public static final int satellite=0x7f040002;
         public static final int scheduleBox=0x7f040020;
-        public static final int scheduleTab=0x7f040025;
-        public static final int scheduleText=0x7f040026;
         public static final int sign_up=0x7f040008;
         public static final int sign_up_page=0x7f04000c;
         public static final int submit_new_task=0x7f04001b;
@@ -183,6 +227,7 @@ containing a value of this type.
         public static final int task_name=0x7f040019;
         public static final int terrain=0x7f040003;
         public static final int toDoBox=0x7f040021;
+        public static final int tvMonth=0x7f040026;
     }
     public static final class layout {
         public static final int activity_log_in=0x7f030000;
@@ -205,11 +250,18 @@ containing a value of this type.
         public static final int sign_up=0x7f080002;
     }
     public static final class string {
-        public static final int action_settings=0x7f050012;
-        public static final int add=0x7f050019;
-        public static final int addCourse=0x7f050016;
-        public static final int addGroup=0x7f050017;
-        public static final int app_name=0x7f050011;
+        public static final int a1=0x7f050011;
+        public static final int a2=0x7f050012;
+        public static final int a3=0x7f050013;
+        public static final int a4=0x7f050014;
+        public static final int a5=0x7f050015;
+        public static final int a6=0x7f050016;
+        public static final int a7=0x7f050017;
+        public static final int action_settings=0x7f05003c;
+        public static final int add=0x7f050043;
+        public static final int addCourse=0x7f050040;
+        public static final int addGroup=0x7f050041;
+        public static final int app_name=0x7f05003b;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=70] 
          */
         public static final int auth_client_availability_notification_title=0x7f05000e;
@@ -219,6 +271,20 @@ containing a value of this type.
         /**   Requested by string saying which app requested the notification. [CHAR LIMIT=42] 
          */
         public static final int auth_client_requested_by_msg=0x7f050010;
+        public static final int b1=0x7f050018;
+        public static final int b2=0x7f050019;
+        public static final int b3=0x7f05001a;
+        public static final int b4=0x7f05001b;
+        public static final int b5=0x7f05001c;
+        public static final int b6=0x7f05001d;
+        public static final int b7=0x7f05001e;
+        public static final int c1=0x7f05001f;
+        public static final int c2=0x7f050020;
+        public static final int c3=0x7f050021;
+        public static final int c4=0x7f050022;
+        public static final int c5=0x7f050023;
+        public static final int c6=0x7f050024;
+        public static final int c7=0x7f050025;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -272,32 +338,53 @@ containing a value of this type.
         find the service-side assets. [CHAR LIMIT=25] 
          */
         public static final int common_signin_button_text_long=0x7f05000d;
-        public static final int confirm_password=0x7f05002f;
-        public static final int course_example=0x7f05001a;
-        public static final int createCourseGroupButton=0x7f050018;
-        public static final int createTask=0x7f050020;
-        public static final int createTaskButton=0x7f05001f;
-        public static final int editTaskPreferences=0x7f050021;
-        public static final int email=0x7f05002a;
-        public static final int group_hint=0x7f05001c;
-        public static final int hello_world=0x7f050013;
-        public static final int login=0x7f05002c;
-        public static final int map=0x7f050026;
-        public static final int map_body=0x7f050027;
-        public static final int meet=0x7f050014;
-        public static final int meet_body=0x7f050015;
-        public static final int password=0x7f05002b;
-        public static final int remove=0x7f050028;
-        public static final int removeCourseButton=0x7f05001b;
-        public static final int schedule=0x7f050024;
-        public static final int schedule_body=0x7f050025;
-        public static final int sign_up=0x7f05002d;
-        public static final int task_name=0x7f050022;
-        public static final int task_name_hint=0x7f050023;
-        public static final int title_activity_log_in=0x7f050029;
-        public static final int title_activity_sign_up=0x7f05002e;
-        public static final int todo=0x7f05001d;
-        public static final int todo_body=0x7f05001e;
+        public static final int confirm_password=0x7f050059;
+        public static final int course_example=0x7f050044;
+        public static final int createCourseGroupButton=0x7f050042;
+        public static final int createTask=0x7f05004a;
+        public static final int createTaskButton=0x7f050049;
+        public static final int d1=0x7f050026;
+        public static final int d2=0x7f050027;
+        public static final int d3=0x7f050028;
+        public static final int d4=0x7f050029;
+        public static final int d5=0x7f05002a;
+        public static final int d6=0x7f05002b;
+        public static final int d7=0x7f05002c;
+        public static final int e1=0x7f05002d;
+        public static final int e2=0x7f05002e;
+        public static final int e3=0x7f05002f;
+        public static final int e4=0x7f050030;
+        public static final int e5=0x7f050031;
+        public static final int e6=0x7f050032;
+        public static final int e7=0x7f050033;
+        public static final int editTaskPreferences=0x7f05004b;
+        public static final int email=0x7f050054;
+        public static final int f1=0x7f050034;
+        public static final int f2=0x7f050035;
+        public static final int f3=0x7f050036;
+        public static final int f4=0x7f050037;
+        public static final int f5=0x7f050038;
+        public static final int f6=0x7f050039;
+        public static final int f7=0x7f05003a;
+        public static final int group_hint=0x7f050046;
+        public static final int hello_world=0x7f05003d;
+        public static final int login=0x7f050056;
+        public static final int map=0x7f050050;
+        public static final int map_body=0x7f050051;
+        public static final int meet=0x7f05003e;
+        public static final int meet_body=0x7f05003f;
+        public static final int password=0x7f050055;
+        public static final int remove=0x7f050052;
+        public static final int removeCourseButton=0x7f050045;
+        public static final int schedule=0x7f05004e;
+        public static final int schedule_body=0x7f05004f;
+        public static final int sign_up=0x7f050057;
+        public static final int task_name=0x7f05004c;
+        public static final int task_name_hint=0x7f05004d;
+        public static final int title_activity_log_in=0x7f050053;
+        public static final int title_activity_sign_up=0x7f050058;
+        public static final int todo=0x7f050047;
+        public static final int todo_body=0x7f050048;
     }
     public static final class style {
         /** 
