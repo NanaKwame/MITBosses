@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -22,8 +21,8 @@ import com.parse.ParseQuery;
 public class MeetGroupFragment extends ListFragment{
 	
 	public static FragmentManager fm;
-	private static ArrayAdapter<String> adapter;
-	private static ArrayList<String> groupList;
+	private static GroupListViewAdapter adapter;
+	private static ArrayList<GroupModel> groupList;
 	private String cNum;
 	
 	@Override
@@ -38,9 +37,8 @@ public class MeetGroupFragment extends ListFragment{
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 	  super.onActivityCreated(savedInstanceState);
-	  groupList = new ArrayList<String>();
-	  adapter = new ArrayAdapter<String>(getActivity(),
-		        android.R.layout.simple_list_item_1, groupList);
+	  groupList = new ArrayList<GroupModel>();
+	  adapter = new GroupListViewAdapter(getActivity(), groupList);
 	  adapter.setNotifyOnChange(true);
 	  setListAdapter(adapter);
 	  setGroupList();
@@ -60,7 +58,10 @@ public class MeetGroupFragment extends ListFragment{
 				if (e == null) {
 					if (!tList.isEmpty()) {
 						for (ParseObject obj:tList) {
-							groupList.add(obj.getString("name"));
+							groupList.add(new GroupModel(obj.getString("name"),obj.getString("location"),
+									obj.getString("type"), obj.getString("style"),obj.getInt("begin_h"),
+									obj.getInt("begin_m"),obj.getInt("end_h"),obj.getInt("end_m"),obj.getInt("capacity"),
+									obj.getString("am_pm"),obj.getBoolean("visible"),obj.getBoolean("private")));
 						}
 					}
 					adapter.notifyDataSetChanged();
@@ -99,7 +100,7 @@ public class MeetGroupFragment extends ListFragment{
 		return cNum;
 	}
 	
-	public ArrayList<String> getGroupList() {
+	public ArrayList<GroupModel> getGroupList() {
 		return groupList;
 	}
 	

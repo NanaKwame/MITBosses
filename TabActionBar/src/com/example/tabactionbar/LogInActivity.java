@@ -49,7 +49,8 @@ public class LogInActivity extends Activity {
 		mapIntent.putExtra(USERNAME, email);
 		
 		ParseUser.logInInBackground(email, password, new LogInCallback() {
-			  public void done(ParseUser user, ParseException e) {
+			@Override
+			public void done(ParseUser user, ParseException e) {
 			    if (user != null) {
 			      // Hooray! The user is logged in.
 			    	((EditText) findViewById(R.id.email)).setText("");

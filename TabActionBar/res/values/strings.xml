@@ -56,6 +56,22 @@
     <string name="course_example">i.e.1.00,6.00,18.01,8.01,5.112</string>
     <string name="removeCourseButton">Remove Course</string>
     <string name="group_hint">Group Name</string>
+    <string name="not_attend">Not Attend</string>
+    <string name="attend">Attend</string>
+    <string name="location">Location:</string>
+    <string name="name">Name:</string>
+    <string name="location_hint">Location...</string>
+    <string name="type">Type:</string>
+    <string name="pset">Pset</string>
+    <string name="study">Study</string>
+    <string name="style">Style:</string>
+    <string name="begin_time">Begin:</string>
+    <string name="end_time">End:</string>
+    <string name="capacity">Capacity:</string>
+    <string name="optional">i.e. 5,10,15,etc.</string>
+    <string name="Private">Private</string>
+    <string name="visible">Visible</string>
+    <string name="other">Others:</string>
     
     <string name="todo">Todo</string>
     <string name="todo_body"> Amadu Will implement this activity</string>
@@ -81,5 +97,7 @@
     
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="confirm_password">Confirm Password</string>
+    
+    <string name="doneButton">Done</string>
 
 </resources>

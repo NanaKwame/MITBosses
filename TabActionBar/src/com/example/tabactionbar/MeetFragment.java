@@ -2,6 +2,7 @@ package com.example.tabactionbar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 import android.annotation.TargetApi;
 import android.app.Fragment;
@@ -29,7 +30,22 @@ public class MeetFragment extends Fragment{
 											  "6.004","6.005","6.006","7.012","7.013",
 											  "7.014","7.02"
 											));
-	
+	static final HashMap<String,String> locations;
+	static
+    {
+        locations = new HashMap<String, String>();
+        locations.put("Student Center", "");
+        locations.put("Stata Center", "");
+        locations.put("Z Center", "");
+        locations.put("Maseeh", "");
+        locations.put("New House", "");
+        locations.put("Simmons", "");
+        locations.put("Bexley", "");
+        locations.put("McCormick", "");
+        locations.put("Next House", "");
+        locations.put("Baker", "");
+        locations.put("McGregor", "");
+    }
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

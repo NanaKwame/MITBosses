@@ -3,25 +3,24 @@ package com.example.tabactionbar;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-
 import android.annotation.TargetApi;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MapFragFake extends Fragment {
@@ -40,11 +39,6 @@ public class MapFragFake extends Fragment {
 	private CheckBox meetBox ;
 	private CheckBox meBox  ;
 	private View view;
-	
-	
-
-	
-	
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -214,12 +208,6 @@ public class MapFragFake extends Fragment {
 		deleteAllMarkerTodo();
 	}
 	
-	
-	
-	
-	
-	
-	
 	@Override
 	public void onStart() {
 		// TODO Auto-generated method stub
@@ -302,9 +290,6 @@ public class MapFragFake extends Fragment {
 		
 		setUpMapIfNeeded();
 	}
-
-
-
 
 	@Override
     public void onDestroyView() {

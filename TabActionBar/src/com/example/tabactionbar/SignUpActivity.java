@@ -1,9 +1,5 @@
 package com.example.tabactionbar;
 
-import com.parse.ParseException;
-import com.parse.ParseUser;
-import com.parse.SignUpCallback;
-
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +10,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 public class SignUpActivity extends Activity {
 
@@ -87,7 +87,9 @@ public class SignUpActivity extends Activity {
 			newUser.setEmail(email_text);
 			
 			newUser.signUpInBackground(new SignUpCallback() {
-				  public void done(ParseException e) {
+				
+				@Override
+				public void done(ParseException e) {
 				    if (e == null) {
 				    	startActivity(login);
 				    } else {

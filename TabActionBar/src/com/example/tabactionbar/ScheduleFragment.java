@@ -17,11 +17,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -727,7 +725,7 @@ public boolean onCreateOptionsMenu(Menu menu) {
 */
 private void findEventsForThisDay(String day){
         if (day.length() >= 3){
-                if(day.contains((CharSequence)"*"))
+                if(day.contains("*"))
                         Toast.makeText(view.getContext(),  "Today - No events planned.", Toast.LENGTH_LONG).show();
 
         }else if ( day.equals(Integer.toString(todaysDay + 1))  && shownMonth == todaysMonth && shownYear == todaysYear){

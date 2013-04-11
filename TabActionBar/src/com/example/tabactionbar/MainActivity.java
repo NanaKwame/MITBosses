@@ -1,6 +1,7 @@
 package com.example.tabactionbar;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -20,14 +21,22 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.Spinner;
+import android.widget.TimePicker;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParsePush;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.PushService;
@@ -38,6 +47,8 @@ public class MainActivity extends Activity {
 	static ArrayList<String> testObjects = new ArrayList<String>();
 	private final String todo = "Tasks";
 	private Dialog dialog;
+	private ArrayList<String> courseList;
+	private String style, location;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -86,25 +97,10 @@ public class MainActivity extends Activity {
 		actionBar.addTab(tab);
 
 	}
-	
-//	public static void removeObject(View v) {
-//		ParseQuery query = new ParseQuery("TestObject");
-//		query.getInBackground(testObjects.get(0), new GetCallback() {
-//		  public void done(ParseObject object, ParseException e) {
-//		    if (e == null) {
-//		      object.deleteInBackground();
-//		    } else {
-//		      // something went wrong
-//		    	System.out.println("Something went wrong");
-//		    }
-//		  }
-//		});
-//		testObjects.remove(0);
-//	}
 
 	private void setupPushNotifications() {
 		PushService.subscribe(this, "", MainActivity.class);
-		PushService.setDefaultPushCallback(this, MainActivity.class);
+//		PushService.setDefaultPushCallback(this, MainActivity.class);
 	}
 
 	private class TabListener<T> implements
@@ -262,15 +258,10 @@ public class MainActivity extends Activity {
 	 */
 	public void addCourseToUser(View v) {
 		ParseUser currentUser = ParseUser.getCurrentUser();
-		JSONArray courses = new JSONArray();
-		for (Object course : currentUser.getList("courses")) {
-			courses.put(course);
-		}
-		Log.e("Main", "Course List: "+ courses.toString());
 		String courseNum = ((AutoCompleteTextView) dialog.findViewById(R.id.auto_complete_course)).getText().toString();
-    	currentUser.put("courses", courses.put(courseNum));
-		Log.e("Main", "Course List: "+ courses.toString());
+    	currentUser.addAllUnique("courses", Arrays.asList(courseNum));
     	currentUser.saveInBackground();
+    	addCourseChannel(courseNum);
     	addUserToCourse(courseNum);
 	}
 	
@@ -285,12 +276,7 @@ public class MainActivity extends Activity {
 		        if (e == null && !courseList.isEmpty()) {
 		            //update the User object
 		        	ParseObject object = courseList.get(0);
-		        	JSONArray users = new JSONArray();
-		        	for (Object user : object.getList("users")) {
-		        		users.put(user);
-		        	}
-//		        	Log.e("adding course", users.toString());
-		        	object.put("users", users.put(ParseUser.getCurrentUser().getUsername()));
+		        	object.addAllUnique("users", Arrays.asList(ParseUser.getCurrentUser().getUsername()));
 		        	object.saveInBackground();
 		        } else if (e == null && courseList.isEmpty()){
 		        	Log.e("adding course", "made it");
@@ -302,8 +288,6 @@ public class MainActivity extends Activity {
 		        		object.put("users", new JSONArray().put(ParseUser.getCurrentUser().getUsername()));
 		        		object.put("groups", new JSONArray());
 		        		object.saveInBackground();
-//			        	Log.e("adding course", object.getList("users").toString());
-
 		        	}
 		        } else {
 		        	Log.d("course", "Error: " + e.getMessage());
@@ -323,6 +307,7 @@ public class MainActivity extends Activity {
 		dialog.setContentView(R.layout.add_group_dialog);
 		dialog.setTitle(R.string.addGroup);
 		Button mButton = (Button) dialog.findViewById(R.id.create_group_dialog_button);
+		Log.e("Main", "about to add onclicklistener");
 		mButton.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -331,11 +316,80 @@ public class MainActivity extends Activity {
 				addGroupToCourse();
 			}
 		});
+		Spinner locSpinner = (Spinner) dialog.findViewById(R.id.location_dropdown);
+		setLocSpinnerList(locSpinner);
+		locSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View arg1,
+					int pos, long arg3) {
+				location = parent.getItemAtPosition(pos).toString();
+				
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// do nothing
+				
+			}
+			
+		});
+		Spinner styleSpinner = (Spinner) dialog.findViewById(R.id.style_dropdown);
+		setStyleSpinnerList(styleSpinner);
+		styleSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View arg1,
+					int pos, long arg3) {
+				style = parent.getItemAtPosition(pos).toString();
+				
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// do nothing
+				
+			}
+			
+		});
 		dialog.show();
 	}
 	
+	private void setStyleSpinnerList(Spinner styleSpinner) {
+		List<String> list = new ArrayList<String>();
+		list.add("Highly Social");
+		list.add("Frequent Discussion");
+		list.add("Occassional Discussion");
+		list.add("Infrequent Conversation");
+		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+			android.R.layout.simple_spinner_item,list);
+		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		styleSpinner.setAdapter(dataAdapter);
+		
+	}
+
+	private void setLocSpinnerList(Spinner locSpinner) {
+		List<String> list = new ArrayList<String>();
+		for (String loc: MeetFragment.locations.keySet()) {
+			list.add(loc);
+		}
+		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+			android.R.layout.simple_spinner_item, list);
+		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		locSpinner.setAdapter(dataAdapter);
+		
+	}
+	
 	private void addGroupToCourse() {
+		// get all of the fields necessary for group creation in the table
 		final EditText gNameField = (EditText) dialog.findViewById(R.id.group_name);
+		final RadioButton psetR = (RadioButton) dialog.findViewById(R.id.psetRadio);
+		final RadioButton studyR = (RadioButton) dialog.findViewById(R.id.studyRadio);
+		final TimePicker begin = (TimePicker) dialog.findViewById(R.id.timePicker1);
+		final TimePicker end = (TimePicker) dialog.findViewById(R.id.timePicker2);
+		final EditText capacity = (EditText) dialog.findViewById(R.id.group_capacity);
+		final RadioButton visibleR = (RadioButton) dialog.findViewById(R.id.visibleRadio);
+		final RadioButton privateR = (RadioButton) dialog.findViewById(R.id.Private);
 		final MeetGroupFragment frag = MeetFragment.getCurrentGroupFrag();
 		
 		if (!frag.getGroupList().contains(gNameField.getText().toString())) {
@@ -349,15 +403,36 @@ public class MainActivity extends Activity {
 				public void done(List<ParseObject> tList, ParseException e) {
 					if (e == null) {
 						if (!tList.isEmpty()) {
-							JSONArray groupList = new JSONArray();
 							ParseObject course = tList.get(0);
-							for (Object obj:course.getList("groups")) {
-								groupList.put((String) obj);
-							}
-							groupList.put(gNameField.getText().toString());
-							course.put("groups", groupList);
+							course.addAllUnique("groups", Arrays.asList(gNameField.getText().toString()));
 							course.saveInBackground();
-							addGroup(gNameField.getText().toString());
+							
+							Log.e("addGroupToCourse", "after all variable assignments: "+location+" "+style+""+psetR.isChecked()+" "+begin.getCurrentHour()+" "+begin.getCurrentMinute()+" "+
+									end.getCurrentHour()+" "+end.getCurrentMinute()+" "+Integer.parseInt(capacity.getText().toString())+" "+visibleR.isChecked()+" "+privateR.isChecked());
+							
+							String type = "";
+							if (psetR.isChecked()) {
+								if (studyR.isChecked()) {
+									type = "Pset & Study";
+								}else {
+									type = "Pset";
+								}
+							}else if (studyR.isChecked()) {
+								type = "Study";
+							}
+							
+							int begin_h = begin.getCurrentHour();
+							int begin_m = begin.getCurrentMinute();
+							int end_h = end.getCurrentHour();
+							int end_m = end.getCurrentMinute();
+							int capacityI = Integer.parseInt(capacity.getText().toString());
+							String am_pm = "nothing";
+							boolean visible = visibleR.isChecked();
+							boolean priv = privateR.isChecked();
+							Log.e("addGroupToCourse", "after all variable assignments: "+psetR.isChecked()+" "+begin+" "+
+							end_h+" "+end_m+" "+capacityI+" "+am_pm+" "+visible+" "+priv);
+							addGroup(gNameField.getText().toString(),location,type,style,begin_h,begin_m,
+									end_h,end_m,capacityI,am_pm,visible,priv);
 							dialog.dismiss();
 						}
 					}
@@ -384,50 +459,121 @@ public class MainActivity extends Activity {
 		}
 	}
 	
-	private void addGroup(String gName) {
+	/**
+	 * Adds the specified group to the course
+	 * @param gName
+	 */
+	private void addGroup(String gName, String location, String type, String style,
+			int begin_h, int begin_m, int end_h, int end_m, int capacity,
+			String am_pm, boolean visible, boolean priv) {
 		final MeetGroupFragment frag = MeetFragment.getCurrentGroupFrag();
 		ParseObject group = new ParseObject(MeetFragment.GROUP_FIELD);
+		group.put("channelName", "T"+frag.getCourseNum().replace(".", "_"));
 		group.put("name", gName);
 		group.put("coursenum", frag.getCourseNum());
+		group.put("location", location);
+		group.put("type", type);
+		group.put("style", style);
+		group.put("begin_h", begin_h);
+		group.put("begin_m", begin_m);
+		group.put("end_h", end_h);
+		group.put("end_m", end_m);
+		group.put("capacity", capacity);
+		group.put("am_pm", am_pm);
+		group.put("visible", visible);
+		group.put("private", priv);
+//		group.put("attendees", new JSONArray());
+//		group.put("non-attendees", new JSONArray());
 		group.saveInBackground();
+		Log.e("addGroupToCourse", "after all variable assignments");
+		pushNewGroupNotification(frag.getCourseNum(),gName);
 		frag.updateGroupList();
 	}
-
-	public void deleteCourse(View v) {
-		deleteCourseFromUser();
-		deleteUserFromCourse();
+	
+	/**
+	 * Pushes a notification to all users of this specific course
+	 * so that they are aware of the newly made group
+	 * @param gName
+	 */
+	private void pushNewGroupNotification(String course, String gName) {
+		String courseChannel = "T"+course.replace(".", "_");
+		ParsePush push = new ParsePush();
+		push.setChannel(courseChannel);
+		push.setMessage("The group "+gName+" was recently created");
+		push.sendInBackground();
+		
+	}
+	
+	/**
+	 * add the user to the group channel
+	 */
+	private void addCourseChannel(String courseNum) {
+		String courseChannel = "T"+courseNum.replace(".", "_");
+		PushService.subscribe(getBaseContext(), courseChannel, MainActivity.class);
 	}
 
-	private void deleteUserFromCourse() {
-		final MeetGroupFragment frag = MeetFragment.getCurrentGroupFrag();
+	public void showDeleteCourseDialog(View v) {
+		courseList = new ArrayList<String>();
+		for (Object course: ParseUser.getCurrentUser().getList("courses")) {
+			courseList.add((String) course);
+		}
+		final ArrayAdapter<String> courseAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, courseList);
+		courseAdapter.setNotifyOnChange(true);
+		dialog = new Dialog(this);
+		dialog.setContentView(R.layout.delete_listview_dialog);
+		dialog.setTitle(R.string.removeCourseButton);
 		
+		ListView courseView = (ListView) dialog.findViewById(android.R.id.list);
+		courseView.setAdapter(courseAdapter);
+		courseView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> l, View v, int position,
+					long arg3) {
+				// TODO Auto-generated method stub
+				Log.e("Main-onItemSelected", "the item selected: "+l.getItemAtPosition(position).toString());
+				deleteCourse((String) l.getItemAtPosition(position));
+				courseList.remove(position);
+				courseAdapter.notifyDataSetChanged();
+				MeetCourseFragment.updateCourseGridView();
+			}
+			
+		});
+		
+		Button mButton = (Button) dialog.findViewById(R.id.done_deleting_courses);
+		mButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Log.e("Main", "deleted Course");
+				dialog.dismiss();
+			}
+		});
+		dialog.show();
+	}
+	
+	public void deleteCourse(String courseNum) {
+//		final MeetGroupFragment frag = MeetFragment.getCurrentGroupFrag();
+//		String courseNum = frag.getCourseNum();
+		deleteCourseFromUser(courseNum);
+		deleteUserFromCourse(courseNum);
+		removeCourseChannel(courseNum);
+	}
+
+	private void deleteUserFromCourse(String courseNum) {		
 		ParseQuery query = new ParseQuery(MeetFragment.COURSE_FIELD);
-		query.whereEqualTo("number", frag.getCourseNum());
+		query.whereEqualTo("number", courseNum);
 		query.findInBackground(new FindCallback() {
 		    public void done(List<ParseObject> courseList, ParseException e) {
 		        if (e == null && !courseList.isEmpty()) {
 		            //delete the User object
 		        	ParseObject obj = courseList.get(0);
 		        	ParseUser user = ParseUser.getCurrentUser();
-		        	JSONArray arr = new JSONArray();
-		        	for (Object object:obj.getList("users")) {
-		        		if (!object.equals(user.getUsername())) {
-		        			arr.put(object);
-		        		}
-		        	}
-		        	obj.put("users", arr);
-		        	
-		        	arr = new JSONArray();
-		        	for (Object object:user.getList("courses")) {
-		        		if (!object.equals(obj.getString("number"))) {
-		        			arr.put(object);
-		        		}
-		        	}
-		        	user.put("courses", arr);
-		        	
+		        	obj.removeAll("users", Arrays.asList(user.getUsername()));
+		        	user.removeAll("courses", Arrays.asList(obj.getString("number")));
 		        	user.saveInBackground();
 		        	obj.saveInBackground();
-		        	MeetFragment.revertHome();
+//		        	MeetFragment.revertHome();
 		        }
 		        else {
 		        	// there was an error that should be handled
@@ -438,9 +584,13 @@ public class MainActivity extends Activity {
 		
 	}
 
-	private void deleteCourseFromUser() {
-		// TODO Auto-generated method stub
-		
+	private void deleteCourseFromUser(String courseNum) {
+		ParseUser.getCurrentUser().removeAll("courses", Arrays.asList(courseNum));
+	}
+	
+	private void removeCourseChannel(String courseNum) {
+		String courseChannel = "T"+courseNum.replace(".", "_");
+		PushService.unsubscribe(getBaseContext(), courseChannel);
 	}
 
 }
