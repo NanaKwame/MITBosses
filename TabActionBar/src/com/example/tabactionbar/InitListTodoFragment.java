@@ -16,7 +16,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.parse.FindCallback;
@@ -30,8 +29,8 @@ import com.parse.SaveCallback;
 public class InitListTodoFragment extends ListFragment {
 
 //	Button mButton;
-	private static ArrayAdapter<String> adapter;
-	private static ArrayList<String> taskList;
+	private static TodoArrayAdapter adapter;
+	private static ArrayList<TodoModel> taskList;
 	private static final String className = "Tasks";
 
 	/**
@@ -52,15 +51,20 @@ public class InitListTodoFragment extends ListFragment {
 ////				createTask();
 //			}
 //		});
+		
+		// log this to parse
+		ParseObject visitTodo = new ParseObject("Todo_List");
+		visitTodo.put("action", "Just visited");
+		visitTodo.saveInBackground();
+		
 		return view;
 	}
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 	  super.onActivityCreated(savedInstanceState);
-	  taskList = new ArrayList<String>();
-	  adapter = new ArrayAdapter<String>(getActivity(),
-		        android.R.layout.simple_list_item_1, taskList);
+	  taskList = new ArrayList<TodoModel>();
+	  adapter = new TodoArrayAdapter(getActivity(), taskList);
 	  adapter.setNotifyOnChange(true);
 	  setListAdapter(adapter);
 	  setTaskList();
@@ -70,24 +74,27 @@ public class InitListTodoFragment extends ListFragment {
 	public void onListItemClick(final ListView l, View v, final int position, long id) {
 	    // Delete/remove the item from the list
 		//maybe first popup an alert just to confirm
-		new AlertDialog.Builder(getActivity())
-	    .setTitle("Delete entry")
-	    .setMessage("Are you sure you want to delete this entry?")
-	    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-	        public void onClick(DialogInterface dialog, int which) { 
-	            // continue with delete
-	        	Log.e("InitList", "Pressed yes and now trying to delete");
-	        	deleteTask(l.getItemAtPosition(position).toString());
-	        	
-	        }
-	     })
-	    .setNegativeButton("No", new DialogInterface.OnClickListener() {
-	        public void onClick(DialogInterface dialog, int which) { 
-	            // simply close the alert dialog
-	        	dialog.dismiss();
-	        }
-	     })
-	     .show();
+//		new AlertDialog.Builder(getActivity())
+//	    .setTitle("Delete entry")
+//	    .setMessage("Are you sure you want to delete this entry?")
+//	    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//	        public void onClick(DialogInterface dialog, int which) { 
+//	            // continue with delete
+//	        	Log.e("InitList", "Pressed yes and now trying to delete");
+//	        	deleteTask(l.getItemAtPosition(position).toString());
+//	        	ParseObject deleteTask = new ParseObject("Todo_List");
+//	        	deleteTask.put("action", "deleted task");
+//	        	deleteTask.saveInBackground();
+//	        	
+//	        }
+//	     })
+//	    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+//	        public void onClick(DialogInterface dialog, int which) { 
+//	            // simply close the alert dialog
+//	        	dialog.dismiss();
+//	        }
+//	     })
+//	     .show();
 	}
 
 
@@ -112,7 +119,7 @@ public class InitListTodoFragment extends ListFragment {
 					// TODO Auto-generated method stub
 					if (e == null) {
 						//the save was successful so pass on the name
-						taskList.add(objectName);
+						taskList.add(new TodoModel(objectName));
 						adapter.notifyDataSetChanged();
 					}
 					else {
@@ -164,7 +171,7 @@ public class InitListTodoFragment extends ListFragment {
 			public void done(List<ParseObject> tList, ParseException e) {
 				if (e == null) {
 					for (ParseObject object: tList) {
-						taskList.add(object.getString("name"));
+						taskList.add(new TodoModel(object.getString("name")));
 					}
 					adapter.notifyDataSetChanged();
 				}
@@ -176,7 +183,7 @@ public class InitListTodoFragment extends ListFragment {
 		});
 	}
 
-	private void deleteTask(final String objectName) {
+	public static void deleteTask(final String objectName) {
 		ParseQuery query = new ParseQuery(className);
 		query.whereEqualTo("name", objectName);
 		query.findInBackground(new FindCallback() {

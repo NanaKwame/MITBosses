@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
@@ -30,6 +31,11 @@ public class SignUpActivity extends Activity {
 		Intent fromLogin = getIntent();
 		String email = fromLogin.getStringExtra(LogInActivity.USERNAME);
 		((EditText) findViewById(R.id.email_sign_up)).setText(email);
+		
+		// logging
+		ParseObject signup = new ParseObject("SignUpActivity");
+		signup.put("action", "just arriving");
+		signup.saveInBackground();
 	}
 
 	/**
@@ -101,6 +107,12 @@ public class SignUpActivity extends Activity {
 				    }
 				  }
 				});
+			
+			// logging signup
+			ParseObject signup = new ParseObject("SignUpActivity");
+			signup.put("action", "signing up");
+			signup.saveInBackground();
+			
 		}else {
 			//some information as to why the user was unable to sign in 
 			//with this user login should be mentioned

@@ -4,6 +4,8 @@ import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.parse.ParseObject;
+
 
 import android.annotation.TargetApi;
 import android.app.Fragment;
@@ -672,6 +674,12 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 }
         });
         generateCalendar(todaysDay, todaysMonth, todaysYear);
+        
+        // logging
+        ParseObject log = new ParseObject("ScheduleFragment");
+     	log.put("action", "just arrived");
+     	log.saveInBackground();
+     		
 		return view;
 
 }

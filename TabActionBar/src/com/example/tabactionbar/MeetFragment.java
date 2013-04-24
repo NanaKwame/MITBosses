@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import com.parse.ParseObject;
+
 import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -52,6 +54,11 @@ public class MeetFragment extends Fragment{
 
 		setupInitialLayout();
 		View view = inflater.inflate(R.layout.meet, container, false);
+		
+		// logging
+		ParseObject log = new ParseObject("MeetFragment");
+		log.put("action", "just arrived");
+		log.saveInBackground();
 		
 		return view;
 	}

@@ -221,6 +221,11 @@ public class MainActivity extends Activity {
 		map.put("name", name);
 		map.put("creator", ParseUser.getCurrentUser().getUsername());
 		ToDoFragment.updateListFragment(todo, map);
+		
+		// logging
+		ParseObject log = new ParseObject("Todo_List");
+		log.put("action", "added task");
+		log.saveInBackground();
 	}
 	
 	/**
@@ -263,6 +268,11 @@ public class MainActivity extends Activity {
     	currentUser.saveInBackground();
     	addCourseChannel(courseNum);
     	addUserToCourse(courseNum);
+    	
+    	// logging
+    	ParseObject log = new ParseObject("MeetFragment");
+		log.put("action", "adding course");
+		log.saveInBackground();
 	}
 	
 	/**
@@ -442,6 +452,11 @@ public class MainActivity extends Activity {
 				}
 				
 			});
+			
+			// logging
+			ParseObject log = new ParseObject("CourseFragment");
+			log.put("action", "creating group");
+			log.saveInBackground();
 		}
 		else {
 			// present an alert dialog stating the inability to create an identical group
@@ -558,6 +573,11 @@ public class MainActivity extends Activity {
 		deleteCourseFromUser(courseNum);
 		deleteUserFromCourse(courseNum);
 		removeCourseChannel(courseNum);
+		
+		// logging
+		ParseObject log = new ParseObject("MeetFragment");
+		log.put("action", "deleting course");
+		log.saveInBackground();
 	}
 
 	private void deleteUserFromCourse(String courseNum) {		

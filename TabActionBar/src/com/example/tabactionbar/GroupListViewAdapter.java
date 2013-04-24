@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 public class GroupListViewAdapter extends ArrayAdapter<GroupModel>{
@@ -132,6 +133,11 @@ public class GroupListViewAdapter extends ArrayAdapter<GroupModel>{
 				currentUser.removeAll("notAttending", Arrays.asList(viewHolder.name.getText().toString()));
 				currentUser.saveInBackground();
 				self.notifyDataSetChanged();
+				
+				// log the user's attendance of a group
+				ParseObject attending = new ParseObject("GroupMeet");
+				attending.put("action", "clicked attending");
+				attending.saveInBackground();
 			}
         	
         });
@@ -200,6 +206,11 @@ public class GroupListViewAdapter extends ArrayAdapter<GroupModel>{
 				currentUser.addAllUnique("notAttending", Arrays.asList(viewHolder.name.getText().toString()));
 				currentUser.saveInBackground();
 				self.notifyDataSetChanged();
+				
+				// log the user's not-attendance of a group
+				ParseObject attending = new ParseObject("GroupMeet");
+				attending.put("action", "clicked not-attending");
+				attending.saveInBackground();
 			}
         	
         });

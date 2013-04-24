@@ -12,6 +12,7 @@ import android.widget.EditText;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 public class LogInActivity extends Activity {

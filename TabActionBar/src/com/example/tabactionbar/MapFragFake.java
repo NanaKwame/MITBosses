@@ -21,6 +21,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.parse.ParseObject;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MapFragFake extends Fragment {
@@ -124,6 +125,12 @@ public class MapFragFake extends Fragment {
         });
 		
 		setUpMapIfNeeded();
+		
+		// logging
+		ParseObject log = new ParseObject("MapFragment");
+		log.put("action", "just arrived");
+		log.saveInBackground();
+				
 		return view;
 	}
 	
@@ -144,26 +151,36 @@ public class MapFragFake extends Fragment {
 	
 	private void makeMarkers(){
 		addMarkerMeet("6.01 Pset Group", 42.34909, -71.08953, "test");
-		addMarkerScedule("Buy Milk", 42.34947, -71.08695, "test");
+		addMarkerSchedule("Buy Milk", 42.34947, -71.08695, "test");
 		addMarkerTodo("Do 6.02 Pset", 42.34573, -71.08850, "test");
 	}
 	
-	public static void addMarkerScedule(String name, Double lat, Double longi, String type){
+	public static void addMarkerSchedule(String name, Double lat, Double longi, String type){
 		ArrayList<Double> pseudoPos = new ArrayList<Double>();
 		pseudoPos.add(lat);
 		pseudoPos.add(longi);
 		scheduleMarkersOnMap.put(name,pseudoPos);
 		scheduleMarkerNames.add(name);
+		
+		// logging
+		ParseObject log = new ParseObject("MapFragment");
+		log.put("action", "add marker schedule");
+		log.saveInBackground();
 	}
 	
-	public static void deleteAllMarkerScedule(){
+	public static void deleteAllMarkerSchedule(){
 		scheduleMarkersOnMap= new HashMap<String, ArrayList<Double>>();
 		scheduleMarkerNames= new ArrayList<String>();
 	}
 	
-	public static void deleteMarkerScedule(String name){
+	public static void deleteMarkerSchedule(String name){
 		scheduleMarkersOnMap.remove(name);
 		scheduleMarkerNames.remove(name);
+		
+		// logging
+		ParseObject log = new ParseObject("MapFragment");
+		log.put("action", "delete marker schedule");
+		log.saveInBackground();
 	}
 	
 	public static void addMarkerTodo(String name, Double lat, Double longi, String type){
@@ -172,6 +189,11 @@ public class MapFragFake extends Fragment {
 		pseudoPos.add(longi);
 		todoMarkersOnMap.put(name,pseudoPos);
 		todoMarkerNames.add(name);
+		
+		// logging
+		ParseObject log = new ParseObject("MapFragment");
+		log.put("action", "add marker todo");
+		log.saveInBackground();
 	}
 	
 	public static void deleteAllMarkerTodo(){
@@ -182,6 +204,11 @@ public class MapFragFake extends Fragment {
 	public static void deleteMarkerTodo(String name){
 		todoMarkersOnMap.remove(name);
 		todoMarkerNames.remove(name);
+		
+		// logging
+		ParseObject log = new ParseObject("MapFragment");
+		log.put("action", "delete marker todo");
+		log.saveInBackground();
 	}
 	
 	public static void addMarkerMeet(String name, Double lat, Double longi, String type){
@@ -190,6 +217,11 @@ public class MapFragFake extends Fragment {
 		pseudoPos.add(longi);
 		meetMarkersOnMap.put(name,pseudoPos);
 		meetMarkerNames.add(name);
+		
+		// logging
+		ParseObject log = new ParseObject("MapFragment");
+		log.put("action", "add marker meet");
+		log.saveInBackground();
 	}
 	
 	public static void deleteAllMarkerMeet(){
@@ -200,11 +232,16 @@ public class MapFragFake extends Fragment {
 	public static void deleteMarkerMeet(String name){
 		meetMarkersOnMap.remove(name);
 		meetMarkerNames.remove(name);
+		
+		// logging
+		ParseObject log = new ParseObject("MapFragment");
+		log.put("action", "delete marker meet");
+		log.saveInBackground();
 	}
 	
 	public static void clearMap(){
 		deleteAllMarkerMeet();
-		deleteAllMarkerScedule();
+		deleteAllMarkerSchedule();
 		deleteAllMarkerTodo();
 	}
 	
