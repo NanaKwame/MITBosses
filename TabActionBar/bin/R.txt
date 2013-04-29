@@ -17,7 +17,7 @@ int dimen activity_vertical_margin 0x7f060001
 int drawable ic_launcher 0x7f020000
 int drawable schmap 0x7f020001
 int id Private 0x7f040025
-int id action_settings 0x7f04006e
+int id action_settings 0x7f040070
 int id add_course_button 0x7f04000f
 int id add_course_dialog 0x7f04000d
 int id add_meet_course 0x7f04002c
@@ -69,6 +69,7 @@ int id bNextMonth 0x7f040041
 int id bPreviousMonth 0x7f04003f
 int id button_layout 0x7f040035
 int id capacity_layout 0x7f040021
+int id checkbox_list 0x7f04006e
 int id confirm_password_sign_up 0x7f04000b
 int id contentFragment 0x7f04006d
 int id course_fragment 0x7f040028
@@ -88,9 +89,11 @@ int id group_capacity 0x7f040022
 int id group_location 0x7f040034
 int id group_name 0x7f040013
 int id hybrid 0x7f040004
+int id list_name 0x7f04006f
 int id location_dropdown 0x7f040015
 int id location_layout 0x7f040014
 int id login 0x7f040007
+int id logout 0x7f040071
 int id map 0x7f040039
 int id meBox 0x7f04003d
 int id meetBox 0x7f04003c
@@ -142,6 +145,7 @@ int layout mapfragfake 0x7f03000b
 int layout meet 0x7f03000c
 int layout schedule 0x7f03000d
 int layout todo 0x7f03000e
+int layout todo_list_view 0x7f03000f
 int menu log_in 0x7f080000
 int menu main 0x7f080001
 int menu sign_up 0x7f080002
@@ -227,6 +231,7 @@ int string hello_world 0x7f05003d
 int string location 0x7f050049
 int string location_hint 0x7f05004b
 int string login 0x7f050066
+int string logout 0x7f05006b
 int string map 0x7f050060
 int string map_body 0x7f050061
 int string meet 0x7f05003e
