@@ -179,33 +179,14 @@ public class MapFragFake extends Fragment {
 		log.saveInBackground();
 	}
 	
+	public static void deleteAllMarkerSchedule(){
+		scheduleMarkersOnMap= new HashMap<String, ArrayList<Double>>();
+		scheduleMarkerNames= new ArrayList<String>();
+	}
 	
 	public static void deleteMarkerSchedule(String name){
 		scheduleMarkersOnMap.remove(name);
 		scheduleMarkerNames.remove(name);
-		//deleting marker from parse
-		com.parse.ParseQuery query = new com.parse.ParseQuery("Map Markers");
-		query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
-		query.findInBackground(new com.parse.FindCallback() {
-			@Override
-			public void done(List<ParseObject> arg0, com.parse.ParseException arg1) {
-				// TODO Auto-generated method stub
-				if (arg1 == null) {
-					if (!arg0.isEmpty()) {
-						for (int i = 0; i < arg0.size(); i++) {
-							ParseObject row=arg0.get(i);
-							if(row.getString("type").equals("Schedule") && row.getString("name").equals("name")){
-								row.deleteInBackground();
-							}
-						}
-						
-					}
-				}
-			}
-		});
-		
-	
-		
 		
 		// logging
 		ParseObject log = new ParseObject("MapFragment");
@@ -234,32 +215,14 @@ public class MapFragFake extends Fragment {
 		log.saveInBackground();
 	}
 	
+	public static void deleteAllMarkerTodo(){
+		todoMarkersOnMap= new HashMap<String, ArrayList<Double>>();
+		todoMarkerNames= new ArrayList<String>();
+	}
 	
 	public static void deleteMarkerTodo(String name){
 		todoMarkersOnMap.remove(name);
 		todoMarkerNames.remove(name);
-		
-		//deleting marker from parse
-				com.parse.ParseQuery query = new com.parse.ParseQuery("Map Markers");
-				query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
-				query.findInBackground(new com.parse.FindCallback() {
-					@Override
-					public void done(List<ParseObject> arg0, com.parse.ParseException arg1) {
-						// TODO Auto-generated method stub
-						if (arg1 == null) {
-							if (!arg0.isEmpty()) {
-								for (int i = 0; i < arg0.size(); i++) {
-									ParseObject row=arg0.get(i);
-									if(row.getString("type").equals("To do") && row.getString("name").equals("name")){
-										row.deleteInBackground();
-									}
-								}
-								
-							}
-						}
-					}
-				});
-		
 		
 		// logging
 		ParseObject log = new ParseObject("MapFragment");
@@ -287,33 +250,14 @@ public class MapFragFake extends Fragment {
 		log.saveInBackground();
 	}
 	
+	public static void deleteAllMarkerMeet(){
+		meetMarkersOnMap= new HashMap<String, ArrayList<Double>>();
+		meetMarkerNames= new ArrayList<String>();
+	}
 	
 	public static void deleteMarkerMeet(String name){
 		meetMarkersOnMap.remove(name);
 		meetMarkerNames.remove(name);
-		
-		//deleting marker from parse
-				com.parse.ParseQuery query = new com.parse.ParseQuery("Map Markers");
-				query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
-				query.findInBackground(new com.parse.FindCallback() {
-					@Override
-					public void done(List<ParseObject> arg0, com.parse.ParseException arg1) {
-						// TODO Auto-generated method stub
-						if (arg1 == null) {
-							if (!arg0.isEmpty()) {
-								for (int i = 0; i < arg0.size(); i++) {
-									ParseObject row=arg0.get(i);
-									if(row.getString("type").equals("Meet") && row.getString("name").equals("name")){
-										row.deleteInBackground();
-									}
-								}
-								
-							}
-						}
-					}
-				});
-		
-		
 		
 		// logging
 		ParseObject log = new ParseObject("MapFragment");
@@ -321,6 +265,11 @@ public class MapFragFake extends Fragment {
 		log.saveInBackground();
 	}
 	
+	public static void clearMap(){
+		deleteAllMarkerMeet();
+		deleteAllMarkerSchedule();
+		deleteAllMarkerTodo();
+	}
 	
 	@Override
 	public void onStart() {
