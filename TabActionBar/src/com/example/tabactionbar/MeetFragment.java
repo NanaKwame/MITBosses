@@ -72,6 +72,7 @@ public class MeetFragment extends Fragment{
 		fm = getFragmentManager();
 		FragmentTransaction transaction = fm.beginTransaction();
 		transaction.replace(R.id.meetContentFragment, currentFrag);
+//		transaction.addToBackStack(null);
 		transaction.commit();
 		
 	}
@@ -87,6 +88,7 @@ public class MeetFragment extends Fragment{
 		currentGroupFrag.setCourseNum(courseNum);
 		FragmentTransaction transaction = fm.beginTransaction();
 		transaction.replace(R.id.meetContentFragment, currentGroupFrag);
+		transaction.addToBackStack(null);
 		transaction.commit();
 	}
 	
@@ -98,6 +100,7 @@ public class MeetFragment extends Fragment{
 		currentFrag = new MeetCourseFragment();
 		FragmentTransaction transaction = fm.beginTransaction();
 		transaction.replace(R.id.meetContentFragment, currentFrag);
+		transaction.addToBackStack(null);
 		transaction.commit();
 	}
 

@@ -1,5 +1,7 @@
 package com.example.tabactionbar;
 
+import org.json.JSONArray;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
@@ -20,6 +22,7 @@ public class SignUpActivity extends Activity {
 
 	public final static String USERNAME = "com.example.myfirstapp.USERNAME";
 	public final static String PASSWORD = "com.example.myfirstapp.PASSWORD";
+	public final static String FROMSIGNUP = "com.example.myfirstapp.FROMSIGNUP";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +87,7 @@ public class SignUpActivity extends Activity {
 		
 		login.putExtra(USERNAME, email_text);
 		login.putExtra(PASSWORD, password_text);
+		login.putExtra(FROMSIGNUP, true);
 		
 		if (confirm_text.equals(password_text)) {
 			//if the password are correct then redirect to the login page
@@ -91,6 +95,7 @@ public class SignUpActivity extends Activity {
 			newUser.setUsername(email_text);
 			newUser.setPassword(password_text);
 			newUser.setEmail(email_text);
+			newUser.put(MeetCourseFragment.COURSE_FIELD, new JSONArray());
 			
 			newUser.signUpInBackground(new SignUpCallback() {
 				

@@ -99,5 +99,7 @@
     <string name="confirm_password">Confirm Password</string>
     
     <string name="doneButton">Done</string>
+    
+    <string name="logout">Logout</string>
 
 </resources>

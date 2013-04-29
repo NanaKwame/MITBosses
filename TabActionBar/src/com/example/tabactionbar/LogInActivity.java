@@ -12,7 +12,6 @@ import android.widget.EditText;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 public class LogInActivity extends Activity {
@@ -25,6 +24,16 @@ public class LogInActivity extends Activity {
 		setContentView(R.layout.activity_log_in);
 		
 		Parse.initialize(this, "AGzf1jUA64JLDe3Kr1etAOuIvTpQAfLZvUUmSl3x", "1bccOOc7hcRKx28QSPqPxXyvFoRywqJPS98H2egq");
+//		ParseUser.logOut();
+//		Log.e("Login",ParseUser.getCurrentUser().getUsername());
+		Intent fromSignup = getIntent();
+		if (ParseUser.getCurrentUser() != null && !fromSignup.getBooleanExtra(SignUpActivity.FROMSIGNUP, false)){
+			final Intent mapIntent = new Intent(this, MainActivity.class);
+			mapIntent.putExtra(USERNAME, ParseUser.getCurrentUser().getUsername());
+			Log.e("Login","The user: "+ParseUser.getCurrentUser().getUsername()+" is already logged in");
+			startActivity(mapIntent);
+			
+		}
 		
 	}
 
@@ -39,6 +48,7 @@ public class LogInActivity extends Activity {
 		Intent signUp = new Intent(this, SignUpActivity.class);
 		signUp.putExtra(USERNAME, ((EditText) findViewById(R.id.email)).getText().toString());
 		startActivity(signUp);
+		finish();
 	}
 	
 	public void loginUser(View v) {

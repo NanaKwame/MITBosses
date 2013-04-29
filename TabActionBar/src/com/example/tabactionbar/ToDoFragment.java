@@ -38,6 +38,7 @@ public class ToDoFragment extends Fragment{
 		fm = getFragmentManager();
 		FragmentTransaction transaction = fm.beginTransaction();
 		transaction.replace(R.id.contentFragment, currentFrag);
+//		transaction.addToBackStack(null);
 		transaction.commit();
 		
 	}

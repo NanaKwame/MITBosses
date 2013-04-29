@@ -101,6 +101,7 @@ public final class R {
         public static final int location_dropdown=0x7f080010;
         public static final int location_layout=0x7f08000f;
         public static final int login=0x7f080002;
+        public static final int logout=0x7f08006c;
         public static final int map=0x7f080034;
         public static final int meBox=0x7f080038;
         public static final int meetBox=0x7f080037;
@@ -223,6 +224,7 @@ public final class R {
         public static final int location=0x7f050038;
         public static final int location_hint=0x7f05003a;
         public static final int login=0x7f050055;
+        public static final int logout=0x7f05005a;
         public static final int map=0x7f05004f;
         public static final int map_body=0x7f050050;
         public static final int meet=0x7f05002d;

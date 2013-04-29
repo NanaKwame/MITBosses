@@ -67,6 +67,7 @@ public class TodoArrayAdapter extends ArrayAdapter<TodoModel>{
 					    .setNegativeButton("No", new DialogInterface.OnClickListener() {
 					        public void onClick(DialogInterface dialog, int which) { 
 					            // simply close the alert dialog
+					        	viewHolder.delete.setChecked(false);
 					        	dialog.dismiss();
 					        }
 					     })
@@ -80,6 +81,7 @@ public class TodoArrayAdapter extends ArrayAdapter<TodoModel>{
             view = convertView;
         }
         ViewHolder holder = (ViewHolder) view.getTag();
+        Log.e("todoArray",list.get(position).getName());
         holder.name.setText(list.get(position).getName());
         return view;
     }

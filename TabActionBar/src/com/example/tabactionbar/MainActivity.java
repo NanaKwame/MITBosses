@@ -16,9 +16,13 @@ import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -97,7 +101,32 @@ public class MainActivity extends Activity {
 		actionBar.addTab(tab);
 
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.main, menu);
+	    return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	        case R.id.logout:
+	            logOut();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
 
+	private void logOut() {
+        ParseUser.logOut();
+		final Intent loginIntent = new Intent(this, LogInActivity.class);
+		startActivity(loginIntent);
+	}
+	
 	private void setupPushNotifications() {
 		PushService.subscribe(this, "", MainActivity.class);
 //		PushService.setDefaultPushCallback(this, MainActivity.class);

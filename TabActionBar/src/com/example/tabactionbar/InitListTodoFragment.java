@@ -119,6 +119,7 @@ public class InitListTodoFragment extends ListFragment {
 					// TODO Auto-generated method stub
 					if (e == null) {
 						//the save was successful so pass on the name
+						Log.e("initlistfrag",objectName);
 						taskList.add(new TodoModel(objectName));
 						adapter.notifyDataSetChanged();
 					}
