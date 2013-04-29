@@ -184,15 +184,15 @@ public class InitListTodoFragment extends ListFragment {
 		});
 	}
 
-	public static void deleteTask(final String objectName) {
+	public static void deleteTask(final TodoModel tdModel) {
 		ParseQuery query = new ParseQuery(className);
-		query.whereEqualTo("name", objectName);
+		query.whereEqualTo("name", tdModel.getName());
 		query.findInBackground(new FindCallback() {
 		  public void done(List<ParseObject> objects, ParseException e) {
 		    if (e == null) {
 		    	try {
 					objects.get(0).delete();
-					taskList.remove(objectName);
+					taskList.remove(tdModel);
 					adapter.notifyDataSetChanged();
 					Log.e("InitList", "deleted task");
 				} catch (ParseException e1) {

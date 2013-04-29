@@ -57,7 +57,7 @@ public class TodoArrayAdapter extends ArrayAdapter<TodoModel>{
 					        public void onClick(DialogInterface dialog, int which) { 
 					            // continue with delete
 					        	Log.e("InitList", "Pressed yes and now trying to delete");
-					        	InitListTodoFragment.deleteTask(list.get(position).getName());
+					        	InitListTodoFragment.deleteTask(list.get(position));
 					        	ParseObject deleteTask = new ParseObject("Todo_List");
 					        	deleteTask.put("action", "deleted task");
 					        	deleteTask.saveInBackground();
