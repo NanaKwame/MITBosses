@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -153,9 +154,7 @@ public class MapFragFake extends Fragment {
     }
 	
 	private void makeMarkers(){
-		addMarkerMeet("6.01 Pset Group", 42.34909, -71.08953, "test");
-		addMarkerSchedule("Buy Milk", 42.34947, -71.08695, "test");
-		addMarkerTodo("Do 6.02 Pset", 42.34573, -71.08850, "test");
+		
 	}
 	
 	public static void addMarkerSchedule(String name, Double lat, Double longi, String type){
@@ -422,8 +421,10 @@ public class MapFragFake extends Fragment {
 				// TODO Auto-generated method stub
 				if (arg1 == null) {
 					if (!arg0.isEmpty()) {
+						Log.e("load markers","marker not empty ");
 						for (int i = 0; i < arg0.size(); i++) {
 							ParseObject row=arg0.get(i);
+							Log.e("marker", row.getString("type"));
 							if(row.getString("type").equals("Schedule")){
 								addMarkerSchedule(row.getString("name"), row.getDouble("latitude"), row.getDouble("longitude"), row.getString("type"));
 							}
