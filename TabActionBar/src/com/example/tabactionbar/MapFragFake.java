@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -413,7 +412,7 @@ public class MapFragFake extends Fragment {
     }
 	
 	private void loadMarkersFromParse(){
-		com.parse.ParseQuery query = new com.parse.ParseQuery("Map Markers");
+		com.parse.ParseQuery query = new com.parse.ParseQuery("MapMarkers");
 		query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
 		query.findInBackground(new com.parse.FindCallback() {
 			@Override
@@ -421,10 +420,8 @@ public class MapFragFake extends Fragment {
 				// TODO Auto-generated method stub
 				if (arg1 == null) {
 					if (!arg0.isEmpty()) {
-						Log.e("load markers","marker not empty ");
 						for (int i = 0; i < arg0.size(); i++) {
 							ParseObject row=arg0.get(i);
-							Log.e("marker", row.getString("type"));
 							if(row.getString("type").equals("Schedule")){
 								addMarkerSchedule(row.getString("name"), row.getDouble("latitude"), row.getDouble("longitude"), row.getString("type"));
 							}
