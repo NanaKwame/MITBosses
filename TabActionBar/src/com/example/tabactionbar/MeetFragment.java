@@ -3,8 +3,7 @@ package com.example.tabactionbar;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-
-import com.parse.ParseObject;
+import java.util.List;
 
 import android.annotation.TargetApi;
 import android.app.Fragment;
@@ -15,6 +14,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MeetFragment extends Fragment{
@@ -32,21 +36,24 @@ public class MeetFragment extends Fragment{
 											  "6.004","6.005","6.006","7.012","7.013",
 											  "7.014","7.02"
 											));
-	static final HashMap<String,String> locations;
+	static final HashMap<String,List<Double>> locations;
 	static
     {
-        locations = new HashMap<String, String>();
-        locations.put("Student Center", "");
-        locations.put("Stata Center", "");
-        locations.put("Z Center", "");
-        locations.put("Maseeh", "");
-        locations.put("New House", "");
-        locations.put("Simmons", "");
-        locations.put("Bexley", "");
-        locations.put("McCormick", "");
-        locations.put("Next House", "");
-        locations.put("Baker", "");
-        locations.put("McGregor", "");
+        locations = new HashMap<String, List<Double>>();
+        ParseQuery location = new ParseQuery("Static_Markers");
+        location.findInBackground(new FindCallback() {
+			
+			@Override
+			public void done(List<ParseObject> locs, ParseException arg1) {
+				
+				for (ParseObject loc: locs) {
+					locations.put(loc.getString("location_name"), 
+							Arrays.asList(loc.getParseGeoPoint("point").getLatitude(),
+									loc.getParseGeoPoint("point").getLongitude()));
+				}
+				
+			}
+		});
     }
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

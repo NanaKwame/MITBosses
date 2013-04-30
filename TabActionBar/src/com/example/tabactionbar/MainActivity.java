@@ -532,6 +532,9 @@ public class MainActivity extends Activity {
 		Log.e("addGroupToCourse", "after all variable assignments");
 		pushNewGroupNotification(frag.getCourseNum(),gName);
 		frag.updateGroupList();
+		
+		List<Double> locals = MeetFragment.locations.get(location);
+		MapFragFake.addMarkerMeet(gName, locals.get(0), locals.get(1), "");
 	}
 	
 	/**
