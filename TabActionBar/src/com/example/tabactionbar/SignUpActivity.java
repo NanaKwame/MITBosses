@@ -96,6 +96,8 @@ public class SignUpActivity extends Activity {
 			newUser.setPassword(password_text);
 			newUser.setEmail(email_text);
 			newUser.put(MeetCourseFragment.COURSE_FIELD, new JSONArray());
+			newUser.put("attending", new JSONArray());
+			newUser.put("notAttending", new JSONArray());
 			
 			newUser.signUpInBackground(new SignUpCallback() {
 				
